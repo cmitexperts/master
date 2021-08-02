@@ -1,0 +1,42 @@
+// Global
+@import 'main';
+
+// Components
+@import 'components/component-note-box';
+@import 'components/component-masthead';
+@import 'components/component-ratings';
+@import 'components/component-videos';
+@import 'components/component-treatment';
+@import 'components/component-reviews-v2';
+
+// Note box
+.jp-note-box {
+	@include jp-note-box;
+}
+
+// Masthead
+.jp-masthead {
+	@include jp-masthead;
+
+	// Ratings
+	&-ratings {
+		@include jp-ratings;
+	}
+}
+
+// Videos
+.jp-videos {
+	@include jp-videos;
+	padding-bottom: rem-calc(30);
+}
+
+// Treatment
+.jp-treatment {
+	@include jp-treatment;
+	padding-top: 0;
+}
+
+// Reviews V2
+.jp-reviews-v2 {
+	@include jp-reviews-v2;
+}

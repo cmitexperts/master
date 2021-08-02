@@ -1,0 +1,85 @@
+// Interview Modal
+
+@mixin jp-interview-modal {
+
+	// Video
+
+	&-video {
+
+		// Wrapper
+
+		&-wrapper { margin-bottom: rem-calc(30); }
+	}
+
+	// Text
+
+	&-text { margin-bottom: rem-calc(30); }
+
+	// Title
+
+	&-title {
+		margin-bottom: rem-calc(15);
+		text-align: center;
+	}
+
+	// Item
+
+	&-item {
+		cursor: pointer;
+
+		// Image
+
+		&-image {
+			border: rem-calc(2) solid $mercury;
+			border-radius: rem-calc(5);
+			height: auto;
+			width: 100%;
+
+			// Wrapper
+
+			&-wrapper {
+				margin-bottom: rem-calc(10);
+				position: relative;
+			}
+
+			// Play button
+
+			&-play-button {
+				color: $white;
+				font-size: rem-calc(30);
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+
+				// Icon
+
+				&:before {
+					position: relative;
+					z-index: 1;
+				}
+
+				// Background
+
+				&:after {
+					background-color: rgba($black, 0.5);
+					content: '';
+					height: 70%;
+					left: 50%;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					width: 70%;
+				}
+			}
+		}
+
+		// Title
+
+		&-title { text-align: center; }
+
+		// text
+
+		&-text { display: none; }
+	}
+}

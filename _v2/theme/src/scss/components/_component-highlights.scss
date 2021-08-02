@@ -1,0 +1,317 @@
+// Highlights
+
+@mixin jp-highlights {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+
+	// Mobile
+
+	@media screen and (max-width: $breakpoint-sm-max) {
+		.row-component-header {
+			background-color: $white;
+			padding-top: rem-calc(40);
+			margin-bottom: rem-calc(40);
+			margin-top: rem-calc(-40);
+		}
+	}
+
+	&:after {
+		background-color: rgba($white, 0.8);
+		bottom: 0;
+		content: '';
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
+
+	& > .container {
+		position: relative;
+		z-index: 1;
+	}
+
+	// List
+
+	&-list {
+		margin-bottom: rem-calc(40 + 40);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(50 + 50); }
+	}
+
+	// Item
+
+	&-item {
+		margin-bottom: rem-calc(40);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(90); }
+
+		// Last child
+
+		&:last-child { margin-bottom: 0; }
+
+		// Column Order
+
+		@media screen and (min-width: $breakpoint-md) {
+			// Desktop
+
+			&:nth-child(even) .col-12:first-child { order: 2; }
+			&:nth-child(even) .col-12:last-child { order: 1; }
+		}
+
+		// Content
+
+		&-content {
+			margin-bottom: rem-calc(40);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { margin-bottom: 0; }
+
+			@media screen and (min-width: $breakpoint-lg) {
+				.jp-highlights-item:nth-child(odd) & { padding-right: 13%; }
+				.jp-highlights-item:nth-child(even) & { padding-left: 13%; }
+			}
+		}
+
+		// Title
+
+		&-title {
+			color: $black;
+			margin-bottom: rem-calc(30);
+		}
+
+		// Title
+
+		&-text { line-height: 1.8; }
+
+		// Review
+
+		&-review {
+			background-color: $zircon;
+			border: rem-calc(1) solid $mercury;
+			box-shadow: rem-calc(0 24 32) rgba($black, 0.11);
+			border-radius: rem-calc(20);
+			padding: rem-calc(25);
+			position: relative;
+			z-index: 1;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { padding: rem-calc(50 50 30); }
+
+			// Author
+
+			&-author {
+				align-items: center;
+				display: flex;
+				margin-bottom: rem-calc(30);
+
+				// Image
+
+				&-image {
+					border-radius: 50%;
+					margin-right: rem-calc(30);
+					overflow: hidden;
+
+					img { width: rem-calc(80); }
+				}
+
+				// Info
+
+				&-info { line-height: 1.2; }
+
+				// Title
+
+				&-title {
+					font-weight: bold;
+					font-size: rem-calc(15);
+					margin-bottom: 0;
+				}
+
+				// Sober Since
+
+				&-sober_since {
+					font-size: rem-calc(15);
+					margin-bottom: 0;
+					margin-top: rem-calc(2);
+					opacity: 0.6;
+				}
+
+				// Logo
+
+				&-logo {
+					padding-right: 0;
+					position: absolute;
+					right: rem-calc(15);
+					top: rem-calc(15);
+
+					&:before {
+						background: linear-gradient(to left bottom, $white 50%, transparent 50%);
+						border-radius: 0 rem-calc(20);
+						content: '';
+						height: rem-calc(120);
+						position: absolute;
+						right: rem-calc(-15);
+						top: rem-calc(-15);
+						width: rem-calc(120);
+					}
+				}
+
+				// Source Image
+
+				&-source_image {
+					position: relative;
+					width: rem-calc(42);
+					z-index: 1;
+				}
+
+				// Stars
+
+				&-stars {
+					margin-bottom: 0;
+					margin-top: rem-calc(2);
+				}
+
+				// Star
+
+				&-star {
+					color: $sunglow;
+					font-size: rem-calc(15);
+				}
+			}
+
+			// Text
+
+			&-text { line-height: 1.8; }
+		}
+
+		// phone
+
+		&-phone {
+			margin-bottom: rem-calc(-175);
+			margin-top: rem-calc(-100);
+
+			// Wrapper
+
+			&-wrapper {
+				display: none;
+				position: relative;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) {
+					display: flex;
+					justify-content: end;
+					margin-bottom: rem-calc(-50);
+				}
+
+				// Background Pattern
+
+				&:after {
+					background: linear-gradient(224.72deg, $link-water -1%, $tara 100.5%);
+					border-radius: rem-calc(20 0 0 20);
+					bottom: 0;
+					content: '';
+					left: 0;
+					position: absolute;
+					right: rem-calc(-1000);
+					top: 0;
+				}
+			}
+
+			// Image
+
+			&-image {
+				height: rem-calc(400);
+				position: relative;
+				z-index: 1;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) { height: rem-calc(700); }
+
+				@media screen and (min-width: $breakpoint-lg) { height: auto; }
+			}
+		}
+	}
+
+	// Insurance
+
+	&-insurance {
+		background-color: $white;
+		box-shadow: rem-calc(16 16 48) rgba($black, 0.0994678);
+		overflow: hidden;
+
+		// Text Column
+
+		&-text {
+			background-color: $international-klein-blue;
+			color: $white;
+			height: 100%;
+			padding: rem-calc(30);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { padding: rem-calc(50); }
+
+			// Link
+
+			a { color: $white; }
+		}
+
+		// Title
+
+		&-title {
+			color: $white;
+			margin-bottom: rem-calc(30);
+		}
+
+		// Subtitle
+
+		&-subtitle {
+			ul {
+				li {
+					&:last-child { margin-bottom: 0; }
+					&:before { color: $white; }
+				}
+			}
+		}
+
+		// Logos Column
+
+		&-logos {
+			align-items: center;
+			background-color: $white;
+			cursor: pointer;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: center;
+			padding: rem-calc(30);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { padding: rem-calc(50); }
+		}
+
+		// Logos
+
+		&-logos_group { margin-bottom: rem-calc(30); }
+
+		// Logo
+
+		&-logo {
+			display: block;
+			margin-bottom: rem-calc(20);
+			max-width: rem-calc(365);
+			width: 100%;
+		}
+	}
+}

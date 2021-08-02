@@ -1,0 +1,89 @@
+// Global
+@import 'main';
+
+// Components
+@import 'components/single-op/component-masthead';
+@import 'components/single-op/component-data';
+@import 'components/single-op/component-highlights-legacy';
+@import 'components/single-op/component-table-legacy';
+@import 'components/single-op/component-reviews';
+@import 'components/single-op/component-location';
+@import 'components/single-op/component-faq';
+
+@import 'components/component-bios';
+@import 'components/component-note-box';
+@import 'components/component-ratings';
+@import 'components/component-interview';
+@import 'components/component-process-v2';
+@import 'components/component-interview-modal';
+
+
+// Note box
+.jp-note-box {
+	@include jp-note-box;
+}
+
+// Masthead
+.jp-masthead {
+	@include jp-masthead;
+
+	// Ratings
+	&-ratings {
+		@include jp-ratings;
+	}
+
+	// Interview
+	&-interview {
+		@include jp-interview;
+	}
+}
+
+// Data
+.jp-data {
+	@include jp-data;
+
+	// Ratings
+	&-ratings {
+		@include jp-ratings;
+	}
+}
+
+// Highlights Legacy
+.jp-highlights-legacy {
+	@include jp-highlights-legacy;
+}
+
+// Table Legacy
+.jp-table-legacy {
+	@include jp-table-legacy;
+}
+
+// Reviews
+.jp-reviews {
+	@include jp-reviews;
+}
+
+// Bios
+.jp-bios {
+	@include jp-bios;
+}
+
+// FAQ
+.jp-faq {
+	@include jp-faq;
+}
+
+// Location
+.jp-location {
+	@include jp-location;
+}
+
+// Process V2
+.jp-process-v2 {
+	@include jp-process-v2;
+}
+
+// Interview Modal
+.jp-interview-modal {
+	@include jp-interview-modal;
+}

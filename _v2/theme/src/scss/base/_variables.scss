@@ -1,0 +1,73 @@
+// Sass Variables
+
+$breakpoint-sm: rem-calc(576);
+$breakpoint-md: rem-calc(768);
+$breakpoint-lg: rem-calc(992);
+$breakpoint-xl: rem-calc(1200);
+$breakpoint-xxl: rem-calc(1400);
+
+$breakpoint-sm-max: rem-calc(576 - 1);
+$breakpoint-md-max: rem-calc(768 - 1);
+$breakpoint-lg-max: rem-calc(992 - 1);
+$breakpoint-xl-max: rem-calc(1200 - 1);
+$breakpoint-xxl-max: rem-calc(1400 - 1);
+
+$font-family-base: 'Montserrat', 'DejaVu Sans', 'Verdana', sans-serif;
+$font-family-heading: 'Montserrat', 'DejaVu Sans', 'Verdana', sans-serif; // 'PT Serif', serif;
+
+// Name that color
+// http://chir.ag/projects/name-that-color/
+
+$black: #000000;
+$white: #ffffff;
+
+$mirage: #1b2831;
+$emperor: #535353;
+$mercury: #e7e7e7;
+$lemon-grass: #9a9c99;
+$athens-gray: #e9ecef;
+$alabaster: #f9f9f9;
+$seashell: #f1f1f1;
+$silver: #cbcbcb;
+$alto: #dbdbdb;
+$zircon: #fafbff;
+$gray: #7e7e7e;
+$cod-gray: #161616;
+$nobel: #b5b5b5;
+$regent-gray: #818a9e;
+$athens-gray-2: #f1f3f6;
+$mine-shaft: #333333;
+$gallery: #eeeeee;
+
+$citrine-white: #fcf8e5;
+$olive: #9d8200;
+$link-water: #e0e7f5;
+$international-klein-blue: #0033a1;
+$midnight: #000e2c;
+$fun-green: #00943a;
+$fun-green-2: #006f2c;
+$cinnabar: #ea4335;
+$blue-charcoal: #000102;
+$blue-ribbon: #0051ff;
+$buddha-gold: #b99905;
+$sunglow: #fbbc04;
+$tara: #e0f6e6;
+$indochine: #d07d00;
+$purple: #4700a1;
+$san-marino: #4569b6;
+$green-haze: #00a14a;
+$black-squeeze: #e4ebf5;
+$indigo: #4d70bd;
+$reef-gold: #9c7c1f;
+$off-yellow: #fef8e7;
+$apple: #3b9541;
+$sweet-corn: #fadb8a;
+$emerald: #58c079;
+$botticelli: #ced6e5;
+$big-stone: #182743;
+
+// CSS Variables (Bootstrap 5)
+
+body {
+	--bs-font-sans-serif: #{$font-family-base};
+}

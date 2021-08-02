@@ -1,0 +1,70 @@
+.ask-a-question {
+	.bottom-cta {
+		padding-bottom: 75px;
+		text-transform: uppercase;
+		overflow: hidden;
+	}
+
+	h2 {
+		margin-top: 55px;
+	}
+
+	h5 {
+		margin-bottom: 50px;
+	}
+
+	h4 {
+		margin-bottom: 20px;
+		font-weight: 500;
+		line-height: 1.2;
+		font-size: 1.5rem;
+	}
+
+	a:not([class]) {
+		color: #333;
+		font-weight: bold;
+	}
+
+	.insurance-link {
+		color: $primary !important;
+	}
+
+	.fa-vr,
+	.fas-vr {
+		font-size: 65px;
+		color: $secondary;
+		margin-bottom: 20px;
+	}
+
+	.drop {
+		cursor: pointer;
+		display: block;
+		color: $primary;
+		font-weight: bold;
+	}
+
+	.ctm-call-widget-container {
+		margin: 0 auto;
+
+		p {
+			text-transform: none;
+			padding-bottom: 0;
+		}
+	}
+
+	input[type='checkbox'] {
+		display: none; /* hide the checkboxes */
+	}
+
+	input + .drop + div {
+		display: none;
+	}
+
+	input:checked + .drop + div {
+		display: block;
+	}
+
+	.btn {
+		margin-top: 20px;
+	}
+}

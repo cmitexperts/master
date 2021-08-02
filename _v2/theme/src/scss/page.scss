@@ -1,0 +1,10 @@
+// Global
+@import 'main';
+
+// Components
+@import 'components/component-content';
+
+// Content
+.jp-content {
+	@include jp-content;
+}

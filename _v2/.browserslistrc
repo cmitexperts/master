@@ -1,0 +1,41 @@
+# Browsers that we support
+# https://github.com/browserslist/browserslist#best-practices
+
+last 2 versions
+> 0.5% in CA
+not dead
+
+# The rules above already put only IE and not IE 10, so the lines below are not necessary
+# ie 11
+# not ie <= 10
+
+# FYI, report generated on Jun 1 2018 using console command 'npx browserslist'
+# and_chr 66
+# and_ff 60
+# and_qq 1.2
+# and_uc 11.8
+# android 66
+# android 4.4.3-4.4.4
+# baidu 7.12
+# chrome 66
+# chrome 65
+# chrome 64
+# edge 17
+# edge 16
+# firefox 60
+# firefox 59
+# ie 11
+# ie_mob 11
+# ios_saf 11.3
+# ios_saf 11.0-11.2
+# ios_saf 10.3
+# ios_saf 10.0-10.2
+# ios_saf 9.3
+# op_mini all
+# op_mob 46
+# opera 53
+# opera 52
+# safari 11.1
+# safari 11
+# samsung 6.2
+# samsung 5

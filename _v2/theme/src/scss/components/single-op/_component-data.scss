@@ -1,0 +1,359 @@
+// Data
+
+@mixin jp-data {
+	// Row
+
+	.row {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	// Table
+	&-table {
+
+		// Table Title
+
+		&-title {
+			margin-bottom: rem-calc(40);
+			line-height: 1.2;
+			text-align: center;
+		}
+
+		// Table Cards
+
+		&-cards {
+			display: flex;
+			flex-direction: column;
+			grid-row-gap: rem-calc(16);
+			padding: 0;
+		}
+
+		// Table Card
+
+		&-card {
+			border: 1px solid #f3f5f7;
+			border-radius: 10px 10px 0 0;
+			padding: rem-calc(20);
+			background-color: #f9fbfd;
+			list-style: none;
+			text-align: left;
+
+			// Table Card Link
+
+			&>a {
+				color: #1b2831;
+				transition: 0.2s ease-out;
+
+				&:hover {
+					text-decoration: none;
+					color: #0033a1;
+				}
+			}
+
+			// Table Card Title
+
+			&-title {
+				margin-bottom: rem-calc(12);
+				font-size: rem-calc(20);
+				font-weight: 700;
+			}
+
+			// Table Card Photo
+
+			&-photo {
+				border-radius: rem-calc(10);
+				background-color: #fff;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				height: rem-calc(168);
+				width: 100%;
+				transition: 0.2s ease-out;
+
+				a {
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+
+				&:hover {
+					opacity: 0.75;
+				}
+			}
+
+			// Table Card Text
+
+			&-text {
+				margin-top: rem-calc(20);
+				font-size: rem-calc(15);
+
+				p, li {
+					margin-bottom: rem-calc(12);
+
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+				}
+
+				ul {
+					padding: 0;
+
+					li {
+						list-style: none;
+					}
+				}
+			}
+
+			// Table Card Footer
+
+			&-footer {
+				margin-top: 16px;
+				font-size: rem-calc(15);
+			}
+
+			// Table Card Stars
+
+			&-stars {
+				margin-bottom: 5px;
+			}
+
+			// Table Card Star
+
+			&-star {
+				color: #fbbc04;
+			}
+		}
+
+		// Table Columns
+
+		&-columns {
+			display: flex;
+			flex-direction: column;
+			grid-row-gap: rem-calc(16);
+			padding: 0;
+		}
+
+		// Table Column
+
+		&-column {
+			border: 1px solid #f3f5f7;
+			border-radius: 10px;
+			list-style: none;
+			text-align: center;
+
+			// Vertical Headings
+			&-vertical-headings {
+				display: none;
+			}
+
+			// Table Column Title
+
+			&-title {
+				margin: 0;
+				border-bottom: 1px solid #f3f5f7;
+				padding: rem-calc(20 24);
+				background-color: #00943a;
+				color: #fff;
+				font-size: rem-calc(20);
+			}
+
+			// Table Column Footer
+
+			&-footer {
+				padding: rem-calc(20 24);
+				background-color: #f9fbfd;
+
+				// Res Large to Extra Large
+				@media only screen and (min-width: $breakpoint-lg) and (max-width: 1400px) {
+					// Table Column Footer Icon
+					.fa-id-card {
+						display: none;
+					}
+				}
+
+				// Table Column Secondary Button
+
+				.secondary-btn {
+					display: block;
+					margin-bottom: rem-calc(15);
+					color: #00943a;
+					font-size: rem-calc(17);
+					font-weight: 700;
+					text-decoration: underline;
+					cursor: pointer;
+					transition: 0.2s ease-out;
+
+					// Table Column Secondary Button Hover
+
+					&:hover {
+						color: #006f2c;
+					}
+				}
+
+				// Table Column Primary Button
+
+				.primary-btn {
+					font-size: rem-calc(17);
+					font-weight: 700;
+					transition: 0.2s ease-out;
+
+					// Table Column Primary Button Hover
+
+					&:hover {
+						opacity: 0.75;
+					}
+				}
+			}
+		}
+
+		// Table Cells
+
+		&-cells {
+			&>.jp-data-table-cell:nth-child(even) {
+				background-color: #f9fbfd;
+			}
+		}
+
+		// Table Cell
+
+		&-cell {
+			border-bottom: 1px solid #f3f5f7;
+			padding: rem-calc(20 24);
+
+			// Table Cell Title
+
+			&-title {
+				font-size: rem-calc(17);
+				font-weight: 700;
+			}
+
+			// Table Cell Icons
+
+			.fa-times {
+				color: #c5c8cb;
+				font-size: rem-calc(22);
+			}
+
+			.fa-check {
+				color: #00943a;
+				font-size: rem-calc(18);
+			}
+		}
+
+		// Table Desktop
+
+		@media only screen and (min-width: $breakpoint-lg) {
+
+			// Table Desktop Row
+
+			.row {
+				display: flex;
+				flex-direction: row;
+				grid-gap: rem-calc(16);
+			}
+
+			// Table Desktop Title
+
+			&-title {
+				margin-top: 48px;
+				margin-bottom: 0;
+				line-height: 140%;
+				text-align: left;
+			}
+
+			// Table Desktop Cards and Columns
+
+			&-cards,
+			&-columns {
+				flex: 1;
+				flex-direction: row;
+				grid-gap: rem-calc(16);
+				margin: 0;
+			}
+
+			// Table Desktop Card and Column
+
+			&-card,
+			&-column {
+				flex: 1;
+			}
+
+			// Table Desktop Title and Vertical Headings
+
+			&-title,
+			&-column-vertical-headings {
+				flex: 0.5;
+				padding: 0;
+			}
+
+
+			// Table Desktop Card
+
+			&-card {
+				display: grid;
+				grid-template-rows: min-content min-content auto min-content;
+				border-bottom: none;
+
+				// Table Desktop Card Photo
+
+				&-photo {
+					height: rem-calc(132);
+				}
+			}
+
+			// Table Desktop Cell
+
+			&-cell {
+				display: grid;
+				align-items: center;
+				padding: 0;
+				height: rem-calc(56);
+				overflow: hidden;
+
+				// Table Desktop Cell Title
+
+				&-title {
+					display: none;
+				}
+			}
+
+			// Table Desktop Column
+
+			&-column {
+				border-radius: rem-calc(0 0 10 10);
+
+				// Table Desktop Column Title
+				&-title {
+					display: none;
+				}
+
+				// Table Desktop Vertical Headings
+
+				&-vertical-headings {
+					display: flex;
+					.jp-data-table {
+
+						// Table Desktop Column Vertical Headings Cells
+						&-cells > .jp-data-table-cell:nth-child(even) {
+							background-color: transparent;
+						}
+
+						// Table Desktop Column Vertical Headings Cell
+						&-cell {
+							border: none;
+
+							// Table Desktop Column Vertical Headings Cell Title
+
+							&-title {
+								display: block;
+								margin-bottom: 0;
+								font-size: rem-calc(19);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

@@ -1,0 +1,132 @@
+// Treatment
+
+@mixin jp-treatment {
+
+	// List
+
+	// &-list {}
+
+	// Item
+
+	&-item {
+		padding: rem-calc(0 0 40 80);
+		position: relative;
+
+		// Icon
+
+		&-icon {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			display: block;
+			height: rem-calc(52);
+			left: 0;
+			position: absolute;
+			top: 0;
+			width: rem-calc(52);
+		}
+
+		// Body
+
+		// &-body {}
+
+		// Title
+
+		&-title {
+			margin-bottom: rem-calc(25);
+			line-height: 1.2;
+			color:$international-klein-blue;
+		}
+	}
+
+	// Bios
+
+	&-bios {
+		margin: rem-calc(40 0 -30);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin: rem-calc(90 0 -30); }
+	}
+
+	// Bio
+
+	&-bio {
+		background: $white;
+		border-radius: rem-calc(4);
+		box-shadow: rem-calc(6 6 34) rgba($black, 0.25);
+		margin-bottom: rem-calc(30);
+		padding: rem-calc(7);
+		position: relative;
+
+		// Location
+
+		&-location {
+			background-color: $black-squeeze;
+			border-radius: rem-calc(10);
+			color: $black;
+			left: rem-calc(15);
+			padding: rem-calc(5 12);
+			position: absolute;
+			top: rem-calc(15);
+		}
+
+		// Image
+
+		&-image { width: 100%; }
+
+		// Bottom
+
+		&-bottom {
+			align-items: center;
+			display: flex;
+			padding: rem-calc(10 2 0);
+		}
+
+		// Like Button
+
+		&-like {
+			align-items: center;
+			background-color: $international-klein-blue;
+			border-radius: rem-calc(5);
+			box-shadow: rem-calc(2 2 4) rgba($black, 0.2);
+			color: $white;
+			cursor: pointer;
+			display: flex;
+			flex: 0 0 auto;
+			padding: rem-calc(2 8);
+			width: auto;
+
+			// Icon
+
+			&-icon {
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				display: block;
+				height: rem-calc(17);
+				margin-right: rem-calc(3);
+				width: rem-calc(17);
+			}
+		}
+
+		// Caption
+
+		&-caption {
+			flex: 1 1 0;
+			padding-right: rem-calc(10);
+			width: auto;
+
+			// Name
+
+			&-name {
+				font-weight: 700;
+				line-height: 1.2;
+			}
+
+			// Sober Since
+
+			&-sober { font-size: rem-calc(15); }
+		}
+	}
+}

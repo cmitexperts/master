@@ -1,0 +1,187 @@
+// Global
+@import 'main';
+
+// LEGACY CODE
+// for the new design of this page,
+// please use the new pattern from template-homepage.scss and other templates
+
+@import 'legacy/default';
+@import 'legacy/faqs';
+
+.jp-legacy-locations {
+	overflow: hidden;
+
+	// Section
+
+	&-section {
+		@import 'legacy/jp-section';
+		@include jp-section;
+	}
+
+	// Masthead Section
+
+	&-masthead {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		position: relative;
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-top: rem-calc(80);
+		}
+
+		@media screen and (max-width: 767px) {
+			background-image: none !important;
+			border-top: 10px solid #e0e7f5;
+		}
+
+		&:before {
+			background-color: rgba($white, 0.6);
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 1;
+		}
+
+		&-content {
+			position: relative;
+			z-index: 2;
+
+			@media screen and (min-width: 768px) {
+				background-color: rgba(#ffffff, 0.9);
+				border-top: 10px solid #e0e7f5;
+				padding: 45px;
+			}
+		}
+
+		&-title {
+			color: $main-font;
+		}
+
+		// &-subtitle {}
+	}
+
+	// Cards Section
+
+	&-cards {
+		background-color: #ededed;
+		padding-bottom: 40px;
+
+		.container {
+			@media (min-width: 1200px) {
+				max-width: 1280px;
+			}
+		}
+
+		&-title {
+			// @extend .jp-loc2-masthead-title;
+
+			@media screen and (min-width: 768px) {
+				text-align: center;
+			}
+		}
+
+		&-card {
+			background-color: #ffffff;
+			border-top: 10px solid #00953b;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+			display: block;
+			margin-bottom: 20px;
+			position: relative;
+			transition: transform 150ms ease-out;
+
+			@media screen and (min-width: 992px) {
+				margin-bottom: 0;
+
+				&:hover,
+				&:focus {
+					transform: scale(1.02);
+				}
+			}
+
+			&-inner {
+				padding: 20px 20px 40px;
+
+				@media screen and (min-width: 1200px) {
+					padding: 20px 20px 40px;
+				}
+			}
+
+			&-img {
+				&-tag {
+					background-color: #e1e7f5;
+					border-radius: 16px;
+					color: $primary;
+					font-weight: 600;
+					padding: 4px 12px;
+					position: absolute;
+					right: 10px;
+					top: 10px;
+				}
+			}
+
+			h5 {
+				margin: 20px 0 10px;
+			}
+
+			// &-subtitle {}
+
+			&-footer {
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+				margin-top: 15px;
+
+				@media screen and (min-width: 1200px) {
+					font-size: 20px;
+				}
+			}
+
+			&-learn-more {
+				color: $primary;
+				text-transform: uppercase;
+
+				strong {
+					font-weight: 800;
+				}
+			}
+
+			&-stars {
+				align-items: center;
+				color: #fadb8a;
+				display: flex;
+			}
+
+			&-star {
+				font-weight: 700;
+				margin-right: 5px;
+			}
+
+			&-count {
+				color: #333333;
+				margin-left: 5px;
+			}
+		}
+	}
+
+	.extra-link {
+		margin: 0 auto 40px;
+	}
+
+	// Table Section
+
+	&-table {
+		@import 'legacy/jp-table';
+		@include jp-table;
+	}
+
+	// FAQ Section
+
+	&-faq {
+		@import 'legacy/jp-faq';
+		@include jp-faq;
+	}
+}

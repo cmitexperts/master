@@ -1,0 +1,109 @@
+// External HTML from Frontman (makerobos.com)
+
+.mkosBTNContainer._widgetRight {
+
+	// Nav open
+
+	body.jp-header-nav-on & { @include blur-content; }
+
+	right: rem-calc(220) !important;
+}
+
+.mkosBTNContainer._widgetRight .mkosBTNFrame {
+	right: rem-calc(220) !important;
+
+	@media screen and (max-width: $breakpoint-sm) {  margin-bottom: -20px; }
+}
+
+#makerobos_Glasscontainer .makerobos_GlassIframe.show {
+	right: 0px !important;
+
+	@media screen and (max-width: $breakpoint-sm) { margin-bottom: -20px; }
+}
+
+.mkosBTNContainer._widgetRight .mr-btn-wrapper {
+	right: rem-calc(260) !important;
+
+	@media screen and (max-width: $breakpoint-sm) { bottom: 21px !important; }
+}
+
+.makerobos_containerMain._widgetRight._standard .makerobos_containerIn {
+	@media screen and (min-width: $breakpoint-md) {
+		bottom: rem-calc(108) !important;
+		right: rem-calc(5) !important;
+	}
+}
+
+// Custom Frontman code (Frontman.js)
+
+.jp-frontman-text {
+    background-color: $cinnabar;
+	border-radius: rem-calc(6 0 0 6);
+ 	bottom: rem-calc(41);
+    box-sizing: border-box;
+    color: $white;
+    cursor: pointer;
+    display: flex;
+	flex-direction: column;
+	height: rem-calc(59);
+    justify-content: center;
+    padding: rem-calc(10);
+    position: fixed;
+	right: 0;
+	text-align: center;
+	transition: all 150ms ease-in-out;
+    width: rem-calc(255);
+	z-index: 9999;
+	box-shadow: 0 2px 18px 0 rgba(0, 0, 0, .4);
+
+	@media screen and (max-width: $breakpoint-sm) { bottom: rem-calc(21); }
+
+	// Nav open
+
+	body.jp-header-nav-on & { @include blur-content; }
+
+	// IE
+
+	&.msie { padding: rem-calc(10 20); }
+
+	// Hover
+
+	&:hover {
+		background-color: darken($color: $cinnabar, $amount: 5%);
+		color: $white;
+	}
+
+	// Top
+
+	&-top {
+		font-size: rem-calc(17);
+		font-weight: normal;
+		line-height: rem-calc(17);
+		margin-bottom: 0;
+		pointer-events: none;
+	}
+
+	// Bottom
+
+	&-bottom {
+		font-size: rem-calc(22);
+		font-weight: 600;
+		pointer-events: none;
+
+		// Icon
+
+		&-icon {
+			display: none;
+			opacity: .4;
+			margin-right: rem-calc(-4);
+			transform: rotate(45deg);
+			vertical-align: middle;
+		}
+
+		// "Call" word
+
+		&-call {
+			@media screen and (max-width: #{rem-calc(370)}) { display: none; }
+		}
+	}
+}

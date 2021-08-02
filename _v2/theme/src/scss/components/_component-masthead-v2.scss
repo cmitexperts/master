@@ -1,0 +1,123 @@
+// Masthead V2
+
+@mixin jp-masthead-v2 {
+	background: linear-gradient(to bottom, $big-stone, $link-water);
+	// margin-left: 0;
+	// margin-right: 0;
+	// overflow: hidden;
+	padding-bottom: 0;
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-lg) { background: linear-gradient(to right, $big-stone, $link-water); }
+
+	// Mobile
+
+	// @media screen and (min-width: $breakpoint-md) { padding-top: rem-calc(90); }
+
+	// Container
+
+	& > .container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	// Background
+
+	&-background {
+		background: linear-gradient(to bottom, $big-stone, $link-water);
+		margin-left: 0;
+		margin-right: 0;
+		overflow: hidden;
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-lg) { background: linear-gradient(to right, $big-stone, $link-water); }
+
+		& > .col-12 {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	// Header
+
+	&-header {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 0;
+		padding: rem-calc(20) 0 rem-calc(30);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-lg) { padding: rem-calc(60 0); }
+	}
+
+	// H1
+
+	&-h1 {
+		color: $botticelli;
+		text-align: left;
+	}
+
+	// Title
+
+	&-title {
+		color: $white;
+		text-align: left;
+	}
+
+	// Subtitle
+
+	&-subtitle {
+		color: $botticelli;
+		text-align: left;
+	}
+
+	// Button
+
+	&-button {
+		margin-top: rem-calc(20);
+
+		// Desktop
+
+	}
+
+	// Image
+
+	&-image {
+		display: inline-block;
+		height: auto;
+		width: rem-calc(625);
+	
+	@media screen and (max-width: $breakpoint-sm) {    max-width: 119%;
+    margin-left: -37px;}
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-lg) { margin-top: rem-calc(-30); }
+		@media screen and (min-width: $breakpoint-xl) { width: rem-calc(850); }
+
+		// Wrapper
+
+		&-wrapper {
+			text-align: center;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				align-items: flex-end;
+				display: flex;
+				margin-right: -50px;
+				overflow: hidden;
+				margin-bottom: -195px;
+				margin-top: -47px;
+			}
+		@media screen and (min-width:$breakpoint-md) and (max-width:$breakpoint-xl){
+							margin-bottom: 0;
+
+		}
+
+		}
+	}
+}

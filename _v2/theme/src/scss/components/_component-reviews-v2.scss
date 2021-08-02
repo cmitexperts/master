@@ -1,0 +1,257 @@
+// Reviews V2
+
+@mixin jp-reviews-v2 {
+	padding-bottom: 0;
+
+	&:before {
+		background-color: $link-water;
+		content: '';
+		height: 50%;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.container {
+		position: relative;
+		z-index: 1;
+	}
+
+	// Box
+
+	&-box {
+		background-color: $white;
+		border-radius: rem-calc(10);
+		box-shadow: rem-calc(0 10 13 -6) rgba($black, 0.08),
+			rem-calc(0 20 31 3) rgba($black, 0.09),
+			rem-calc(0 8 20 7) rgba($black, 0.02);
+		padding: rem-calc(15 25 25);
+		position: relative;
+		margin: 0 auto;
+		max-width: $breakpoint-lg;
+
+		@media screen and (min-width: $breakpoint-md) {
+			padding: rem-calc(50);
+		}
+
+		// Inner
+
+		&-inner {
+			position: relative;
+
+			&:before {
+				background-color: rgba($white, 0.5);
+				bottom: 0;
+				content: '';
+				display: none;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 1;
+			}
+
+			.jp-reviews-v2-box.loading &:before {
+				display: block;
+			}
+		}
+	}
+
+	// Top
+
+	&-top {
+		@media screen and (min-width: $breakpoint-md) {
+			align-items: center;
+			display: flex;
+		}
+	}
+
+	// Summary
+
+	&-summary {
+		align-items: center;
+		display: flex;
+		flex: 1 1 0px;
+		width: auto;
+
+		// Average
+
+		&-avg {
+			color: $gray;
+			font-size: rem-calc(32);
+			margin-bottom: 0;
+			margin-right: rem-calc(12);
+		}
+
+		// Stars
+
+		&-stars {
+			color: $sunglow;
+			margin-right: rem-calc(12);
+
+			@media screen and (min-width: $breakpoint-md) {
+				font-size: rem-calc(24);
+			}
+		}
+
+		// Total
+
+		&-total {
+			color: $regent-gray;
+			margin-bottom: 0;
+		}
+	}
+
+	// Filter
+
+	&-filter {
+		align-items: center;
+		display: flex;
+		flex: 0 0 auto;
+		font-size: rem-calc(15);
+		margin-top: rem-calc(15);
+		width: auto;
+
+		@media screen and (max-width: $breakpoint-md-max) {
+			display: none;
+		}
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-top: 0;
+		}
+
+		label {
+			margin-bottom: 0;
+			margin-right: rem-calc(12);
+		}
+	}
+
+	// Reviews
+
+	&-reviews {
+		border-top: rem-calc(1) solid $athens-gray;
+		height: rem-calc(500);
+		margin: rem-calc(10 0 0);
+		max-height: 50vh;
+		overflow-x: hidden;
+		overflow-y: scroll;
+		padding: rem-calc(25 15 0 0);
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin: rem-calc(40 0 0);
+			padding: rem-calc(30 30 0 0);
+		}
+	}
+
+	// Review
+
+	&-review {
+		margin-top: rem-calc(30);
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		// Author
+
+		&-author {
+			margin-bottom: rem-calc(20);
+		}
+
+		// Image
+
+		&-image {
+			border-radius: 50%;
+			height: rem-calc(60);
+			width: rem-calc(60);
+		}
+
+		// Title
+
+		&-title {
+			font-size: rem-calc(18);
+			margin-bottom: 0;
+			text-align: left;
+		}
+
+		// Stars
+
+		&-stars {
+			color: $sunglow;
+		}
+
+		// Image Google
+
+		&-image-google {
+			float: right;
+			height: rem-calc(50);
+			width: rem-calc(50);
+			margin-top: rem-calc(7);
+		}
+
+		// Text
+
+		&-text {
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			// More text
+
+			&-more {
+				cursor: pointer;
+				color: $international-klein-blue;
+			}
+		}
+	}
+
+	// Loading button
+
+	&-loading-button {
+		display: block;
+		margin: rem-calc(15) auto 0;
+
+		.jp-reviews-v2-box.loading &,
+		.jp-reviews-v2-box.done & {
+			visibility: hidden;
+		}
+
+		@media screen and (min-width: $breakpoint-lg) {
+			visibility: hidden;
+		}
+	}
+
+	// Loading icon
+
+	&-box .jp-loading-icon {
+		@include jp-loading-icon;
+
+		display: none;
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+	}
+
+	&-box.loading .jp-loading-icon {
+		display: block;
+	}
+
+	// Legacy HTML
+
+	&-box .like-button {
+		color: $nobel;
+		cursor: pointer;
+		display: inline-block;
+		font-size: rem-calc(22);
+		margin-top: rem-calc(5);
+
+		data {
+			font-size: rem-calc(15);
+		}
+	}
+}

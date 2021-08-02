@@ -1,0 +1,228 @@
+// Process V2
+
+@mixin jp-process-v2 {
+	background-color: $alabaster;
+	padding-bottom: 0;
+
+	// Title
+
+	&-title { margin-bottom: rem-calc(15); }
+
+	// Body
+
+	&-body {
+		background-color: $alabaster;
+		padding-bottom: 0;
+		padding-top: 0;
+
+		// Text
+
+		&-text {
+			margin-bottom: rem-calc(40);
+			z-index: 2;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(90); }
+
+			@media screen and (min-width: $breakpoint-lg) {
+				margin-bottom: 0;
+				padding-right: rem-calc(30);
+			}
+		}
+
+		// Review
+
+		&-review {
+			background: $zircon;
+			border: rem-calc(1) solid $athens-gray;
+			border-radius: rem-calc(20);
+			// box-shadow: rem-calc(0 14 32) rgba($black, 0.07);
+			padding: rem-calc(25);
+			position: relative;
+			z-index: 2;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) { padding: rem-calc(50); }
+
+			// Image
+
+			&-image {
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				border-radius: 50%;
+				box-shadow: rem-calc(0 2 2) rgba($black, 0.25);
+				display: block;
+				height: rem-calc(80);
+				overflow: hidden;
+				width: rem-calc(80);
+
+				// Wrapper
+
+				&-wrapper {
+					display: inline-block;
+					margin-bottom: rem-calc(15);
+					position: relative;
+
+					// Desktop
+
+					@media screen and (min-width: $breakpoint-md) {
+						margin-bottom: 0;
+						margin-right: rem-calc(10);
+					}
+				}
+
+				// Radar icon
+
+				&-radar {
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					height: rem-calc(26);
+					position: absolute;
+					right: rem-calc(-15);
+					top: rem-calc(-15);
+					width: rem-calc(26);
+				}
+			}
+
+			// Text
+
+			&-text {
+				// Strong
+
+				strong { color: $international-klein-blue; }
+			}
+
+			// Date
+
+			&-date {
+				color: $silver;
+				font-weight: 500;
+				font-size: rem-calc(19);
+				line-height: rem-calc(23);
+				margin-bottom: 0;
+			}
+
+			// Likes icon
+
+			&-likes {
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				cursor: pointer;
+				height: rem-calc(60);
+				position: absolute;
+				right: 0;
+				bottom: rem-calc(-30);
+				width: rem-calc(105);
+
+				// Data (number)
+
+				data {
+					color: $gray;
+					display: block;
+					font-size: rem-calc(22);
+					line-height: rem-calc(57);
+					padding: rem-calc(0 0 0 30);
+					text-align: center;
+				}
+			}
+		}
+
+		// Wave
+
+		&-wave {
+			fill: $white;
+			height: 100%;
+			stroke: none;
+			width: 100%;
+
+			// Wrapper
+
+			&-wrapper {
+				height: rem-calc(250);
+				overflow: hidden;
+				padding-top: rem-calc(100);
+				position: relative;
+			}
+		}
+
+		// Abstract Image
+
+		&-abstract {
+
+			// Wrapper
+
+			&-wrapper {
+				position: absolute;
+				right: rem-calc(-80);
+				top: rem-calc(-40);
+				z-index: 1;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-xxl) { right: 0; }
+			}
+		}
+
+		// Slider
+
+		&-slider {
+			&-row {
+				.tns-outer {
+					position: relative;
+					z-index: 2;
+				}
+
+				.tns-nav {
+					display: flex;
+					justify-content: center;
+
+					& > button {
+						background-color: $silver;
+						border: 0;
+						border-radius: 50%;
+						height: rem-calc(10);
+						margin: rem-calc(0 5);
+						padding: 0;
+						width: rem-calc(10);
+
+						&.tns-nav-active { background-color: $emperor; }
+
+						&:focus { outline: 0; }
+					}
+				}
+			}
+		}
+
+		// Slide
+
+		&-slide { padding-bottom: rem-calc(30); }
+	}
+
+	// Bottom
+
+	&-bottom {
+		padding-bottom: 0;
+		padding-top: 0;
+
+		// Arrow
+
+		&-arrow {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: block;
+			height: rem-calc(297);
+			margin: rem-calc(-180) auto 0;
+			width: rem-calc(199);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { margin-top: rem-calc(-100); }
+		}
+	}
+}

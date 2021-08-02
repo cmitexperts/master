@@ -1,0 +1,56 @@
+# Paths
+paths:
+  site: 'theme'
+
+  # Source folders
+  src: '${paths.site}/src'
+  src_sass: '${paths.src}/scss/main.scss'
+  src_sass_print: '${paths.src}/scss_print/print.scss'
+  src_sass_editor: '${paths.src}/scss/editor.scss'
+  src_sass_page: '${paths.src}/scss/page.scss'
+  # DONE - templates done and live
+  src_sass_single_locations: '${paths.src}/scss/single-locations.scss'
+  src_sass_single_op: '${paths.src}/scss/single-op.scss'
+  src_sass_template_homepage: '${paths.src}/scss/template-homepage.scss'
+  src_sass_template_reviews: '${paths.src}/scss/template-reviews.scss'
+  # DOING - template not finalized, ongoing
+  src_sass_template_about_us: '${paths.src}/scss/template-about-us.scss'
+  # DONE - legacy templates
+  # Copied existing styles from V1 to V2
+  # With the only focus on performance and not styles
+  src_sass_template_legacy_about_us: '${paths.src}/scss/template-legacy-about-us.scss'
+  src_sass_template_legacy_locations: '${paths.src}/scss/template-legacy-locations.scss'
+  src_sass_template_legacy_suboxone_clinics: '${paths.src}/scss/template-legacy-suboxone-clinics.scss'
+  src_sass_template_legacy_virtual_rehab: '${paths.src}/scss/template-legacy-virtual-rehab.scss'
+  # JS
+  src_js: '${paths.src}/js/app/_main.js'
+
+  # Dist folders
+  dist: '${paths.site}/assets'
+  dist_css: '${paths.dist}/css'
+  dist_js:
+    folder: '${paths.dist}/js'
+    file_app: 'main.js'
+    file_externals: 'externals.js'
+    file_externals_ie: 'externals-ie.js'
+  dist_fonts: '${paths.dist}/webfonts'
+
+  # NPM - Fonts
+  npm_fonts:
+    # FontAwesome
+    - 'node_modules/@fortawesome/fontawesome-pro/webfonts/*'
+
+  # NPM - CSS
+  npm_css:
+    # FontAwesome
+    - 'node_modules/@fortawesome/fontawesome-pro/css/all.min.css'
+    # Gutenberg
+    - 'node_modules/gutenberg-css/dist/gutenberg.min.css'
+
+# Compile helpers
+helpers:
+  all_sass: '${paths.src}/scss/**/*.scss'
+  all_sass_print: '${paths.src}/scss_print/**/*.scss'
+  all_app_js: '${paths.src}/js/app/*.js'
+  all_plugins_js: '${paths.src}/js/plugins/*.js'
+  all_plugins_ie_js: '${paths.src}/js/plugins-ie/*.js'

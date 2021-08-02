@@ -1,0 +1,96 @@
+// Footer CTA
+
+@mixin jp-footer-cta {
+
+	// Homepage
+
+	.jp-homepage & { padding-top: rem-calc(30); }
+
+	// Items
+
+	&-items {
+		margin: 0 auto;
+		max-width: $breakpoint-lg;
+	}
+
+	// Item
+
+	&-item {
+		margin-bottom: rem-calc(40);
+		text-align: center;
+
+		// Last child
+
+		.col-12:last-child > & { margin-bottom: 0; }
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: 0; }
+	}
+
+	// Icon
+
+	&-icon {
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		display: inline-block;
+		filter: grayscale(1);
+		height: rem-calc(85);
+		margin-bottom: rem-calc(20);
+		opacity: 0.3;
+		width: rem-calc(85);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			height: rem-calc(156);
+			margin-bottom: rem-calc(40);
+			width: rem-calc(156);
+		}
+
+		// Styles (images moved to HTML to lazy load them... performance)
+
+		// &.phone { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/cta/icon-phone.svg'); }
+		// &.computer { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/cta/icon-computer.svg'); }
+		// &.mobile { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/cta/icon-mobile.svg'); }
+	}
+
+	// Widget
+
+	&-widget {
+		// Label
+
+		&-label {
+			color: $international-klein-blue;
+			cursor: pointer;
+			font-weight: 600;
+			font-size: rem-calc(21);
+			margin-top: rem-calc(15);
+		}
+
+		// Checkbox
+
+		&-checkbox { display: none; }
+
+		// Container
+
+		&-container {
+			display: none;
+
+			// Visible
+
+			.jp-footer-cta-widget-checkbox:checked + & {
+				display: block;
+				height: rem-calc(130);
+			}
+
+			// Text
+
+			p {
+				margin-bottom: rem-calc(5);
+				margin-top: rem-calc(10);
+			}
+		}
+	}
+}

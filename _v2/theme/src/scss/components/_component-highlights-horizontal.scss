@@ -1,0 +1,220 @@
+// Highlights Horizontal
+
+@mixin jp-highlights-horizontal {
+	$custom-breakpoint: rem-calc(1455);
+
+	overflow: hidden;
+
+	// List
+
+	&-list {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto rem-calc(40);
+		max-width: 100%;
+		width: rem-calc(340);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(90); }
+
+		// Desktop (unique line)
+
+		@media screen and (min-width: $custom-breakpoint) {
+			align-items: flex-start;
+			flex-direction: row;
+			margin-bottom: rem-calc(30);
+			width: 100%;
+		}
+
+		// Bottom image
+
+		&-bottom {
+			display: none;
+
+			// Desktop (unique line)
+
+			@media screen and (min-width: $custom-breakpoint) {
+				display: block;
+				margin-bottom: rem-calc(90);
+				padding-left: rem-calc(40);
+			}
+
+			// Image
+
+			&-image { margin: 0 auto; }
+		}
+	}
+
+	// Item
+
+	&-item {
+
+		// Desktop (unique line)
+
+		@media screen and (min-width: $custom-breakpoint) {
+			flex: 0 0 auto;
+			width: auto;
+		}
+
+		// Content
+
+		&-content {
+			background-color: $seashell;
+			margin: 0 rem-calc(10);
+			padding: rem-calc(25) 0;
+
+			// Last item
+
+			.jp-highlights-horizontal-item:last-child & {
+				border-radius: 0 0 rem-calc(10) rem-calc(10);
+			}
+
+			// Desktop (unique line)
+
+			@media screen and (min-width: $custom-breakpoint) {
+				background-color: transparent;
+				margin: 0;
+				padding: rem-calc(30) 0 0;
+			}
+		}
+
+		// Image
+
+		&-image {
+			border-radius: rem-calc(5);
+			box-shadow: 0 rem-calc(7) rem-calc(14) rgba($black, 0.11);
+			position: relative;
+			width: rem-calc(340);
+			z-index: 1;
+
+			// Desktop (unique line)
+
+			@media screen and (min-width: $custom-breakpoint) {
+				border-radius: 0;
+				width: auto;
+			}
+
+			// Custom (App)
+
+			.jp-highlights-horizontal-item-mobile & {
+				box-shadow: none;
+
+				&.mobile {
+					display: block;
+					@media screen and (min-width: $custom-breakpoint) { display: none; }
+				}
+
+				&.desktop {
+					display: none;
+					@media screen and (min-width: $custom-breakpoint) { display: block; }
+				}
+			}
+
+			// Wrapper
+
+			&-wrapper {
+
+				// Custom (App)
+
+				.jp-highlights-horizontal-item-mobile & {
+					background-color: $seashell;
+					margin: 0 rem-calc(10);
+
+					// Desktop (unique line)
+
+					@media screen and (min-width: $custom-breakpoint) {
+						background-color: transparent;
+						margin: 0;
+					}
+				}
+			}
+		}
+
+		// Title
+
+		&-title {
+			color: $fun-green;
+			margin-bottom: rem-calc(15);
+
+			// Custom (App)
+
+			.jp-highlights-horizontal-item-mobile & { color: $international-klein-blue; }
+		}
+
+		// Text
+
+		&-text { margin-bottom: 0; }
+	}
+
+	// Insurance
+
+	&-insurance {
+		background-color: $white;
+		box-shadow: rem-calc(16 16 48) rgba($black, 0.0994678);
+		overflow: hidden;
+
+		// Text Column
+
+		&-text {
+			background-color: $international-klein-blue;
+			color: $white;
+			height: 100%;
+			padding: rem-calc(30);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { padding: rem-calc(50); }
+		}
+
+		// Title
+
+		&-title {
+			color: $white;
+			margin-bottom: rem-calc(30);
+		}
+
+		// Subtitle
+
+		&-subtitle {
+			ul {
+				li {
+					&:last-child { margin-bottom: 0; }
+					&:before { color: $white; }
+				}
+			}
+		}
+
+		// Logos Column
+
+		&-logos {
+			align-items: center;
+			background-color: $white;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			justify-content: center;
+			padding: rem-calc(30);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { padding: rem-calc(50); }
+		}
+
+		// Logos
+
+		&-logos_group { margin-bottom: rem-calc(30); }
+
+		// Logo
+
+		&-logo {
+			cursor: pointer;
+			display: block;
+			margin-bottom: rem-calc(20);
+			max-width: rem-calc(365);
+			width: 100%;
+		}
+	}
+}

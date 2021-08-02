@@ -1,0 +1,149 @@
+// Base
+
+body {
+	color: $mirage;
+	background-color: $white;
+	font-size: rem-calc(17);
+	font-weight: 500;
+	overflow-x: hidden;
+}
+
+// Headings
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: $font-family-heading;
+}
+
+h1,
+.h1 {
+	font-size: rem-calc(17);
+	font-weight: 700;
+	line-height: rem-calc(23);
+}
+
+h2,
+.h2 {
+	font-size: rem-calc(40);
+	font-weight: 700;
+	@media screen and (min-width: $breakpoint-md) {
+		font-size: rem-calc(45);
+	}
+}
+
+.h2-small {
+	@extend .h2;
+	font-size: rem-calc(30);
+	line-height: 1.2;
+
+	@media screen and (min-width: $breakpoint-md) {
+		font-size: rem-calc(35);
+	}
+
+	&.bottom-line {
+		&:after {
+			background-color: $international-klein-blue;
+			border-radius: rem-calc(5);
+			content: '';
+			display: block;
+			height: rem-calc(5);
+			margin-top: rem-calc(15);
+			width: rem-calc(60);
+		}
+	}
+}
+
+h3,
+.h3 {
+	font-family: $font-family-base;
+	font-size: rem-calc(21);
+	font-weight: 500;
+	line-height: rem-calc(30);
+
+	// Styled list
+
+	ul {
+		list-style: none;
+		padding: 0;
+
+		&:last-child {
+			margin: 0;
+		}
+
+		li {
+			margin-bottom: rem-calc(20);
+			padding: 0 0 0 rem-calc(50);
+			position: relative;
+
+			&:before {
+				@include fa-icon;
+				color: $international-klein-blue;
+				content: '\f00c';
+				font-size: rem-calc(30);
+				left: 0;
+				position: absolute;
+				top: 0;
+			}
+		}
+	}
+}
+
+.h3-small {
+	@extend .h3;
+	font-size: rem-calc(18);
+}
+
+h4,
+.h4 {
+	@extend .h1;
+}
+
+h5,
+.h5 {
+	font-family: $font-family-base;
+	font-size: rem-calc(27);
+	font-weight: 600;
+}
+
+h6,
+.h6 {
+	color: $silver;
+	font-size: rem-calc(23);
+	font-weight: 700;
+}
+
+// Link
+
+a {
+	color: $international-klein-blue;
+	text-decoration: none;
+
+	// Pure link
+
+	&:not([class]) {
+		font-weight: 700;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}
+
+// Images
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}

@@ -1,0 +1,39 @@
+// Note box
+
+@mixin jp-note-box {
+	background-color: $botticelli;
+	color: #394661;
+	font-size: rem-calc(15);
+	padding: rem-calc(10 20);
+	position: relative;
+	text-align: center;
+
+	// Text
+
+	p { margin-bottom: 0; }
+
+	// Link
+
+	a { color: #394661; }
+
+	// Phone button
+
+	&-phone {
+		color: #394661;
+		display: block;
+		font-size: rem-calc(15);
+		padding: rem-calc(10);
+		position: absolute;
+		right: rem-calc(10);
+		top: 50%;
+		transform: translateY(-50%) rotateY(180deg);
+	}
+
+	// Modal open
+
+	body.modal-open & { @include blur-content; }
+
+	// Nav open
+
+	body.jp-header-nav-on & { display: none; }
+}

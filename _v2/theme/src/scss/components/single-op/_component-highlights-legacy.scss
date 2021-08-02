@@ -1,0 +1,277 @@
+// Highlights Legacy
+
+@mixin jp-highlights-legacy {
+	background-color: #f9f9f9;
+
+	// Desktop
+	@media screen and (min-width: $breakpoint-lg) {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	// Columns
+	.col {
+		margin-top: rem-calc(40);
+
+		&:first-of-type {
+			margin-top: 0;
+		}
+
+		// Columns Desktop
+		@media screen and (min-width: $breakpoint-lg) {
+			margin-top: 0;
+
+			&:first-of-type {
+				padding-top: rem-calc(110);
+				padding-bottom: rem-calc(110);
+			}
+
+			&:last-of-type {
+				position: absolute;
+				width: calc(50% - 50px);
+				right: 0;
+				top: 0;
+				height: 100%;
+			}
+		}
+
+		// Columns Desktop
+		@media screen and (min-width: $breakpoint-xl) {
+			&:last-of-type {
+				width: calc(50% - 100px);
+			}
+		}
+	}
+
+	// Title
+
+	&-title {
+		margin-bottom: rem-calc(20);
+
+		// Title Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: rem-calc(40);
+		}
+	}
+
+	// List
+
+	&-list {
+		display: flex;
+		flex-direction: column;
+		grid-row-gap: rem-calc(20);
+		padding: 0;
+
+		// List Desktop
+
+		@media screen and (min-width: $breakpoint-lg) {
+			grid-row-gap: rem-calc(30);
+		}
+
+		// Item
+
+		&-item {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			grid-column-gap: rem-calc(16);
+
+			// Icon
+
+			&-icon {
+				display: flex;
+				align-self: start;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				width: rem-calc(34);
+				min-width: rem-calc(34);
+				height: rem-calc(34);
+				background-color: #d6ebde;
+
+				.fa-check {
+					color: #00943a;
+					font-size: rem-calc(15);
+				}
+
+				// Icon Desktop
+
+				@media screen and (min-width: $breakpoint-md) {
+					width: rem-calc(54);
+					min-width: rem-calc(54);
+					height: rem-calc(54);
+
+					.fa-check {
+						font-size: rem-calc(24);
+					}
+				}
+
+				@media screen and (min-width: $breakpoint-lg) {
+					align-self: center;
+				}
+			}
+
+			// Item Title
+
+			&-title {
+				display: block;
+				margin-bottom: 0;
+				font-weight: 700;
+
+				// Item Title Desktop
+
+				@media screen and (min-width: $breakpoint-lg) {
+					font-size: rem-calc(25);
+				}
+			}
+
+			// Item Text
+
+			&-text {
+				display: block;
+				margin-top: 5px;
+				margin-bottom: 0;
+
+				// Item Text Desktop
+
+				@media screen and (min-width: $breakpoint-lg) {
+					font-size: rem-calc(18);
+				}
+			}
+		}
+	}
+
+	// Logos
+
+	&-img-logos {
+		width: 100%;
+		filter: grayscale(100%);
+
+		// Logos Desktop
+
+		@media screen and (min-width: $breakpoint-lg) {
+			width: 50%;
+		}
+
+		// Wrapper
+
+		&-wrapper {
+			margin-top: rem-calc(20);
+
+			// Wrapper Desktop
+
+			@media screen and (min-width: $breakpoint-md) {
+				margin-left: -22px;
+			}
+
+			@media screen and (min-width: $breakpoint-lg) {
+				display: flex;
+				margin-top: rem-calc(40);
+				margin-left: -10px;
+			}
+
+			@media screen and (min-width: $breakpoint-xl) {
+				margin-left: -15px;
+			}
+		}
+	}
+
+	// Button
+
+	&-button {
+		margin-top: rem-calc(20);
+		background-color: #00943a;
+		transition: 0.2s ease-out;
+		max-width: rem-calc(286);
+
+		// Button Hover
+		&:hover {
+			background-color: #006f2c;
+			color: #fff;
+		}
+
+		// Button Desktop
+		@media only screen and (min-width: $breakpoint-md) {
+			padding: rem-calc(12);
+			font-size: rem-calc(22);
+		}
+
+		@media only screen and (min-width: $breakpoint-lg) {
+			margin-top: rem-calc(40);
+		}
+	}
+
+	// Faces
+
+	&-img-faces {
+		margin-top: rem-calc(20);
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-top: 0;
+		}
+	}
+
+	// Gallery
+	&-gallery-image {
+		background-color: rgba(0, 51, 161, 0.03);
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		list-style: none;
+		&-0 {
+			grid-area: one;
+		}
+
+		&-1 {
+			grid-area: two;
+		}
+
+		&-2 {
+			grid-area: three;
+		}
+
+		&-3 {
+			grid-area: four;
+		}
+
+		&-4 {
+			grid-area: five;
+		}
+
+		&-5 {
+			grid-area: six;
+		}
+	}
+
+	&-gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(14, 1fr);
+		grid-gap: 8px;
+		grid-template-areas:
+			"one two three"
+			"one two three"
+			"one two three"
+			"one two three"
+			"one two three"
+			"one two three"
+			"four two three"
+			"four two six"
+			"four two six"
+			"four two six"
+			"four five five"
+			"four five five"
+			"four five five"
+			"four five five";
+		padding: 0;
+		height: 100%;
+		min-height: 380px;
+
+		// Gallery Desktop
+
+		@media screen and (min-width: 500px) {
+			min-height: 600px;
+		}
+	}
+}

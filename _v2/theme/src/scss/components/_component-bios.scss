@@ -1,0 +1,198 @@
+// Bios
+
+@mixin jp-bios {
+	background-color: $alabaster;
+
+
+	// Container
+
+	& > .container {
+		position: relative;
+		z-index: 2;
+	}
+
+	// Slider
+
+	&-slider {
+		display: flex;
+
+		// MS Edge
+
+		html.edge & { display: block; }
+
+		// Buttons
+
+		&-btns {
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			margin-top: rem-calc(40);
+		}
+
+		// Button
+
+		&-btn {
+			align-items: center;
+			background: $alabaster;
+			border: rem-calc(1) solid $alto;
+			border-radius: rem-calc(20);
+			color: $international-klein-blue;
+			cursor: pointer;
+			display: flex;
+			font-size: rem-calc(15);
+			font-weight: bold;
+			height: rem-calc(40);
+			justify-content: center;
+			text-align: center;
+
+			// Icon
+
+			.fas { font-size: rem-calc(25); }
+
+			// Left
+
+			&.left {
+				margin-left: rem-calc(15);
+				width: rem-calc(40);
+
+				// Icon
+
+				.fas { margin-left: rem-calc(-3); }
+			}
+
+			// Right
+
+			&.right {
+				margin-right: rem-calc(15);
+				width: rem-calc(95);
+
+				// Icon
+
+				.fas { margin-left: rem-calc(10); }
+			}
+		}
+	}
+
+	// Slide
+
+	&-slide {
+		align-items: center;
+		background: rgba($international-klein-blue, 0.03);
+		border: rem-calc(1) solid $athens-gray;
+		border-radius: rem-calc(20);
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		padding: rem-calc(20);
+
+		// Wrapper
+
+		// &-wrapper {}
+
+		// Image
+
+		&-image {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			border-radius: 50%;
+			height: rem-calc(117);
+			margin: rem-calc(0 0 20 0);
+			overflow: hidden;
+			width: rem-calc(117);
+		}
+
+		// Name
+
+		&-name { color: $international-klein-blue; }
+
+		// Credentials
+		// Title
+
+		&-credentials,
+		&-title {
+			color: $emperor;
+			font-size: rem-calc(15);
+			margin-bottom: 0;
+		}
+
+		// List
+
+		&-list {
+			list-style: none;
+			margin: rem-calc(20 0 0 0);
+			padding: 0;
+		}
+
+		// Item
+
+		&-item {
+			font-size: rem-calc(17);
+			margin-bottom: rem-calc(5);
+
+			// Last child
+
+			&:last-child { margin-bottom: 0; }
+
+			// Icon
+
+			.fas {
+				color: $international-klein-blue;
+				font-size: rem-calc(15);
+				margin-right: rem-calc(5);
+			}
+		}
+	}
+
+	// Wave
+
+	&-wave {
+		fill: $white;
+		height: 100%;
+		stroke: none;
+		width: 100%;
+
+		// Single Location Template
+
+		body.locations-template-template-single-location-v2 & { fill: $alabaster; }
+
+		// Wrapper
+
+		&-wrapper {
+			height: rem-calc(80);
+			margin-top: rem-calc(120);
+			overflow: hidden;
+			position: relative;
+			z-index: 1;
+
+			// Mobile
+
+			&-mobile {
+				display: block;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) { display: none; }
+			}
+
+			// Desktop
+
+			&-desktop {
+				display: none;
+				height: rem-calc(140);
+				transform: rotateZ(180deg);
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) { display: block; }
+			}
+
+			// Single Location Template
+
+			body.locations-template-template-single-location-v2 & {
+				margin-bottom: rem-calc(-70);
+				transform: rotateZ(180deg);
+			}
+		}
+	}
+}

@@ -1,0 +1,192 @@
+// Location
+
+@mixin jp-location {
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) {
+		&:after {
+			background-color: $alabaster;
+			bottom: 0;
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 50%;
+		}
+
+		& > .container {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	@media screen and (min-width: $breakpoint-lg) {
+		padding-top: rem-calc(110);
+		padding-bottom: rem-calc(110);
+	}
+
+	// Name
+	&-name {
+		margin-bottom: rem-calc(24);
+		font-size: rem-calc(20);
+		font-weight: 500;
+	}
+
+	// Header
+
+	&-header {
+		margin: 0 0 rem-calc(20);
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: rem-calc(40);
+		}
+	}
+
+	// Locations
+
+	&-locations {
+		margin-top: rem-calc(40);
+
+		// Title
+
+		&-title {
+			display: block;
+			font-style: italic;
+		}
+
+		// Item
+
+		&-item {
+			display: block;
+			margin-top: rem-calc(5);
+		}
+	}
+
+	// Address Wrapper
+
+	&-address-wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		grid-column-gap: rem-calc(16);
+		margin-bottom: rem-calc(24);
+	}
+
+	// Address Icon
+
+	&-address-icon {
+		display: flex;
+		align-self: start;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		background-color: #d6ebde;
+		width: rem-calc(34);
+		min-width: rem-calc(34);
+		height: rem-calc(34);
+
+		.fa-globe {
+			color: #00943a;
+			font-size: rem-calc(15);
+		}
+
+		@media screen and (min-width: $breakpoint-md) {
+			width: rem-calc(54);
+			min-width: rem-calc(54);
+			height: rem-calc(54);
+
+			.fa-globe {
+				font-size: rem-calc(24);
+			}
+		}
+	}
+
+	// Address
+
+	&-address {
+		position: relative;
+		margin: 0;
+	}
+
+	// Get Directions link
+
+	&-direction {
+		display: block;
+		font-weight: 700;
+		margin-top: rem-calc(5);
+		margin-bottom: rem-calc(40);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: 0; }
+	}
+
+	// Directions
+
+	&-directions {
+		margin-bottom: rem-calc(40);
+		&-title {
+			margin-bottom: rem-calc(30);
+		}
+	}
+
+	// Tags
+
+	&-tags {
+		margin-bottom: rem-calc(40);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(80); }
+
+		// TItle
+
+		&-title { margin-bottom: rem-calc(30); }
+
+		// List
+
+		&-list { margin-bottom: rem-calc(-20); }
+
+		// Item
+
+		&-item {
+			background: $athens-gray-2;
+			border: rem-calc(1) solid $mercury;
+			border-radius: rem-calc(47 / 2);
+			display: inline-block;
+			margin-bottom: rem-calc(20);
+			padding: rem-calc(10 15);
+		}
+	}
+
+	// Map
+
+	&-map-embed {
+		margin-bottom: rem-calc(24);
+	}
+
+	// Map
+
+	&-map {
+		// Image
+
+		&-image {
+			max-width: rem-calc(1700);
+			width: 250%;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { width: 100%; }
+
+			// Wrapper
+
+			&-wrapper {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				overflow: hidden;
+			}
+		}
+	}
+}

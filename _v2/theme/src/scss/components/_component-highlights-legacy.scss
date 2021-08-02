@@ -1,0 +1,102 @@
+// Highlights Legacy
+
+@mixin jp-highlights-legacy {
+	background-color: $white;
+
+	// Title
+
+	&-title {
+		margin-bottom: rem-calc(20);
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(40); }
+	}
+
+	// List
+
+	&-list {
+		list-style: none;
+		margin-bottom: rem-calc(20);
+		padding-left: 0;
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: 0; }
+
+		// Item
+
+		&-item {
+			margin-bottom: rem-calc(20);
+			position: relative;
+
+			@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(30); }
+
+			// Icon
+
+			&-icon {
+				color: $apple;
+				font-size: rem-calc(25);
+				left: 0;
+				position: absolute;
+				top: rem-calc(5);
+
+				@media screen and (min-width: $breakpoint-md) { font-size: rem-calc(35); }
+			}
+
+			// Title
+
+			&-title {
+				display: block;
+				margin-bottom: 0;
+				margin-left: rem-calc(35);
+
+				@media screen and (min-width: $breakpoint-md) { margin-left: rem-calc(45); }
+			}
+
+			// Text
+
+			&-text {
+				display: block;
+				margin-left: rem-calc(35);
+
+				@media screen and (min-width: $breakpoint-md) { margin-left: rem-calc(45); }
+			}
+		}
+	}
+
+	// Logos
+
+	&-img-logos {
+		filter: grayscale(100%);
+		width: 100%;
+
+		@media screen and (min-width: $breakpoint-lg) { width: 50%; }
+
+		// Wrapper
+
+		&-wrapper {
+			margin-bottom: rem-calc(20);
+
+			@media screen and (min-width: $breakpoint-md) { padding-left: rem-calc(30); }
+
+			@media screen and (min-width: $breakpoint-lg) { display: flex; }
+		}
+	}
+
+	// Faces
+
+	&-img-faces {
+		margin-top: rem-calc(20);
+
+		@media screen and (min-width: $breakpoint-md) { margin-top: 0; }
+	}
+
+	// Button
+
+	&-button {
+		// Wrapper
+
+		&-wrapper {
+			padding-left: rem-calc(35);
+
+			@media screen and (min-width: $breakpoint-md) { padding-left: rem-calc(45); }
+		}
+	}
+}

@@ -1,0 +1,252 @@
+// Masthead
+
+@mixin jp-masthead {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 0;
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) {
+		padding-bottom: 0;
+		padding-top: calc(#{rem-calc(50)} + #{rem-calc(90)});
+	}
+
+	// Background overlay
+
+	&:after {
+		background-image: linear-gradient(
+			180deg,
+			rgba($white, 0.8) 0%,
+			rgba($white, 0.96) 100%
+		);
+		content: '';
+		position: absolute;
+		height: 100%;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	// Container
+
+	& > .container {
+		position: relative;
+		z-index: 3;
+	}
+
+	// Header
+
+	&-header {
+		margin-bottom: rem-calc(20);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: rem-calc(40);
+		}
+	}
+
+	// H1
+
+	&-h1 {
+		margin-top: rem-calc(15);
+		color: $big-stone;
+	}
+
+	// Title
+
+	&-title {
+		color: $international-klein-blue;
+	}
+
+	// Scroll down
+
+	&-go-down {
+		background: transparent
+			url('/wp-content/themes/journeyPure/_v2/theme/assets/img/masthead/icon-go-down.svg')
+			no-repeat center center;
+		background-size: cover;
+		display: inline-block;
+		height: rem-calc(47);
+		text-indent: rem-calc(-9999);
+		width: rem-calc(47);
+		margin-bottom: rem-calc(-20);
+
+		// Wrapper
+
+		&-wrapper {
+			margin-top: rem-calc(75);
+			text-align: center;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) {
+				margin-top: rem-calc(40);
+			}
+		}
+	}
+
+	// Scroll down (2)
+
+	&-go-down-2 {
+		display: flex;
+		padding-top: rem-calc(60);
+		overflow: hidden;
+		position: relative;
+		z-index: 4;
+
+		&-left,
+		&-right {
+			background-color: $white;
+			border-top: rem-calc(5) solid rgba($international-klein-blue, 0.04);
+			height: rem-calc(70);
+			width: 50%;
+
+			body.op-template-template-single-op-v2 & {
+				background-color: $alabaster;
+			}
+		}
+
+		&-left {
+			border-right: rem-calc(8) solid rgba($international-klein-blue, 0.04);
+			transform: skewX(50deg);
+			margin-left: rem-calc(-40);
+			margin-right: rem-calc(36);
+		}
+
+		&-right {
+			border-left: rem-calc(8) solid rgba($international-klein-blue, 0.04);
+			transform: skewX(-50deg);
+			margin-left: rem-calc(37);
+			margin-right: rem-calc(-40);
+		}
+	}
+
+	// Wave
+
+	&-wave {
+		fill: $white;
+		height: 100%;
+		stroke: none;
+		width: 100%;
+
+		// OP template
+
+		body.op-template-template-single-op-v2 & {
+			fill: $alabaster;
+		}
+
+		// Wrapper
+
+		&-wrapper {
+			height: rem-calc(80);
+			margin-top: rem-calc(30);
+			overflow: hidden;
+			position: relative;
+			z-index: 2;
+
+			// Mobile
+
+			&-mobile {
+				display: block;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) {
+					display: none;
+				}
+			}
+
+			// Desktop
+
+			&-desktop {
+				display: none;
+				height: rem-calc(140);
+				transform: rotateZ(180deg);
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) {
+					display: block;
+				}
+			}
+		}
+	}
+
+	// Video
+
+	&-video {
+		// Wrapper
+
+		&-wrapper {
+			margin: rem-calc(24) auto 0;
+			max-width: rem-calc(650);
+		}
+
+		// Video
+
+		&-video {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			cursor: pointer;
+
+			// Wrapper
+
+			&-wrapper {
+				margin-bottom: rem-calc(10);
+				position: relative;
+			}
+
+			// Play button
+
+			&-play-button {
+				&:after {
+					background: transparent
+						url('/wp-content/themes/journeyPure/assets/img/play-circle-solid.svg')
+						no-repeat center center;
+					background-size: rem-calc(100 100);
+					content: '';
+					left: 50%;
+					height: rem-calc(100);
+					opacity: 0.7;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					transition: all 150ms ease-out;
+					width: rem-calc(100);
+					z-index: 2;
+
+					.jp-masthead-video-video-wrapper:hover &,
+					.jp-masthead-video-video-wrapper:focus & {
+						opacity: 0.9;
+					}
+				}
+
+				&:before {
+					background-color: $white;
+					border-radius: 50%;
+					content: '';
+					height: rem-calc(106);
+					left: 50%;
+					opacity: 0.7;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					transition: all 150ms ease-out;
+					width: rem-calc(106);
+					z-index: 1;
+
+					.jp-masthead-video-video-wrapper:hover &,
+					.jp-masthead-video-video-wrapper:focus & {
+						opacity: 0.9;
+						transform: translate(-50%, -50%) scale(1.1);
+					}
+				}
+			}
+		}
+	}
+}

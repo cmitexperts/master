@@ -1,0 +1,76 @@
+// Modals
+
+.jp-modal {
+	// Header
+
+	.modal-header {
+		align-items: center;
+		background-color: $international-klein-blue;
+		color: $white;
+		padding: rem-calc(5);
+
+		// Close button
+
+		.close {
+			background: none;
+			border: 0;
+			color: $white;
+			font-size: rem-calc(40);
+			margin: 0;
+			opacity: 0.7;
+			padding: rem-calc(10);
+
+			// Hover
+
+			&:hover,
+			&:focus {
+				opacity: 1;
+			}
+		}
+
+		// Title
+
+		.modal-title {
+			color: $white;
+			padding: rem-calc(10);
+		}
+	}
+
+	// Clean
+
+	&-clean {
+		// Content
+
+		.modal-content {
+			border: 0;
+			border-radius: 0;
+		}
+
+		// Header
+
+		.modal-header {
+			border: 0;
+			padding: 0;
+
+			// Close button
+
+			.close {
+				position: absolute;
+				right: 0;
+				top: rem-calc(-60);
+			}
+		}
+
+		// Body
+
+		.modal-body {
+			padding: 0;
+
+			// Iframe wrapper
+
+			.ratio {
+				line-height: 0;
+			}
+		}
+	}
+}

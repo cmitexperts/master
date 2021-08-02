@@ -1,0 +1,86 @@
+// Global
+@import 'main';
+
+// Components
+@import 'components/component-note-box';
+@import 'components/homepage/component-masthead';
+@import 'components/component-highlights-horizontal';
+@import 'components/component-ratings';
+@import 'components/component-interview';
+@import 'components/component-interview-modal';
+@import 'components/component-bios';
+@import 'components/component-facts';
+@import 'components/component-treatment';
+@import 'components/component-faq';
+@import 'components/component-process-v2';
+
+// Note box
+.jp-note-box {
+	@include jp-note-box;
+}
+
+// Masthead
+.jp-masthead {
+	@include jp-masthead;
+
+	// Ratings
+	&-ratings {
+		@include jp-ratings;
+	}
+
+	// Interview
+	&-interview {
+		@include jp-interview;
+	}
+}
+
+// Highlights Horizontal
+.jp-highlights-horizontal {
+	@include jp-highlights-horizontal;
+}
+
+// Bios
+.jp-bios {
+	@include jp-bios;
+}
+
+// Facts
+.jp-facts {
+	@include jp-facts;
+}
+
+// Treatment
+.jp-treatment {
+	@include jp-treatment;
+}
+
+// FAQ
+.jp-faq {
+	@include jp-faq;
+}
+
+// Process V2
+.jp-process-v2 {
+	@include jp-process-v2;
+}
+
+// Interview Modal
+.jp-interview-modal {
+	@include jp-interview-modal;
+}
+
+// Adjusting Additional Elements on Home
+
+.home {
+	// Header
+	.jp-header {
+		background-color: #fff;
+	}
+
+	// Component Header
+	.jp-highlights-horizontal {
+		.jp-component-header {
+			max-width: 750px;
+		}
+	}
+}

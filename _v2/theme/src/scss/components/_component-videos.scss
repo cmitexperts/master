@@ -1,0 +1,153 @@
+// Videos
+
+@mixin jp-videos {
+	// Header
+
+	&-header {
+		margin-bottom: rem-calc(24 + 10);
+	}
+
+	// Title
+
+	&-title {
+		margin-bottom: rem-calc(24);
+	}
+
+	// Featured video
+
+	&-featured {
+		margin-bottom: rem-calc(24);
+
+		// Video
+
+		&-video {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			cursor: pointer;
+
+			// Wrapper
+
+			&-wrapper {
+				margin-bottom: rem-calc(10);
+				position: relative;
+			}
+
+			// Play button
+
+			&-play-button {
+				&:after {
+					background: transparent
+						url('/wp-content/themes/journeyPure/assets/img/play-circle-solid.svg')
+						no-repeat center center;
+					background-size: rem-calc(100 100);
+					content: '';
+					left: 50%;
+					height: rem-calc(100);
+					opacity: 0.7;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					transition: all 150ms ease-out;
+					width: rem-calc(100);
+					z-index: 2;
+
+					.jp-videos-featured-video-wrapper:hover &,
+					.jp-videos-featured-video-wrapper:focus & {
+						opacity: 0.9;
+					}
+				}
+
+				&:before {
+					background-color: $white;
+					border-radius: 50%;
+					content: '';
+					height: rem-calc(106);
+					left: 50%;
+					opacity: 0.7;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					transition: all 150ms ease-out;
+					width: rem-calc(106);
+					z-index: 1;
+
+					.jp-videos-featured-video-wrapper:hover &,
+					.jp-videos-featured-video-wrapper:focus & {
+						opacity: 0.9;
+						transform: translate(-50%, -50%) scale(1.1);
+					}
+				}
+			}
+		}
+	}
+
+	// Video item
+
+	&-video {
+		cursor: pointer;
+		margin: 0 auto rem-calc(12);
+		max-width: rem-calc(90);
+		text-align: center;
+
+		// Image
+
+		&-image {
+			border-radius: rem-calc(2);
+
+			// Wrapper
+
+			&-wrapper {
+				margin-bottom: rem-calc(12);
+				position: relative;
+			}
+
+			// Play button
+
+			&-play-button {
+				&:after {
+					background: transparent
+						url('/wp-content/themes/journeyPure/assets/img/play-circle-solid.svg')
+						no-repeat center center;
+					background-size: rem-calc(20 20);
+					content: '';
+					left: 50%;
+					height: rem-calc(20);
+					opacity: 0.7;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					transition: all 150ms ease-out;
+					width: rem-calc(20);
+					z-index: 2;
+
+					.jp-videos-video-image-wrapper:hover &,
+					.jp-videos-video-image-wrapper:focus & {
+						opacity: 0.9;
+					}
+				}
+
+				&:before {
+					background-color: #fff;
+					border-radius: 50%;
+					content: '';
+					height: rem-calc(24);
+					left: 50%;
+					opacity: 0.7;
+					position: absolute;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					transition: all 150ms ease-out;
+					width: rem-calc(24);
+					z-index: 1;
+
+					.jp-videos-video-image-wrapper:hover &,
+					.jp-videos-video-image-wrapper:focus & {
+						opacity: 0.9;
+						transform: translate(-50%, -50%) scale(1.1);
+					}
+				}
+			}
+		}
+	}
+}

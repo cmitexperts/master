@@ -1,0 +1,148 @@
+// Process
+
+@mixin jp-process {
+	background-color: $alabaster;
+	padding-bottom: 0;
+
+	// Title
+
+	&-title { margin-bottom: rem-calc(15); }
+
+	// Tabs
+
+	&-tabs {
+		border-bottom: none;
+		margin: 0 0 rem-calc(40);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin: 0 0 rem-calc(90); }
+	}
+
+	// Tab
+
+	&-tab {
+		display: block;
+		text-align: center;
+		width: 25%;
+
+		// Link
+
+		&-link {
+			display: block;
+			position: relative;
+
+			// Horizontal rule
+
+			&:after {
+				background: rgba($international-klein-blue, 0.07) none repeat scroll 0 0;
+				bottom: 0;
+				content: '';
+				display: block;
+				height: rem-calc(3);
+				margin: 0 auto;
+				position: absolute;
+				left: 50%;
+				top: rem-calc(68/2);
+				width: 100%;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) { top: rem-calc(156/2); }
+			}
+
+			&.visited:after { background: $international-klein-blue; }
+
+			.jp-process-tab:last-child &:after { width: 0; }
+		}
+
+		// Icon
+
+		&-icon {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: inline-block;
+			height: rem-calc(68);
+			margin-bottom: rem-calc(10);
+			position: relative;
+			width: rem-calc(68);
+			z-index: 1;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) {
+				height: rem-calc(156);
+				width: rem-calc(156);
+			}
+
+			// Styles (images moved to HTML to lazy load them... performance)
+
+			// &.call { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-call.svg'); }
+			// &.insurance { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-insurance.svg'); }
+			// &.start { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-start.svg'); }
+			// &.heal { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-heal.svg'); }
+
+			// .active &.call,
+			.visited &.call { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-call-active.svg') !important; }
+
+			.active &.insurance,
+			.visited &.insurance { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-insurance-active.svg') !important; }
+
+			.active &.start,
+			.visited &.start { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-start-active.svg') !important; }
+
+			.active &.heal,
+			.visited &.heal.active { background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/process/icon-heal-active.svg') !important; }
+		}
+
+		// Text
+
+		&-text {
+			color: $international-klein-blue;
+			font-size: rem-calc(13);
+			font-weight: 700;
+			margin-bottom: 0;
+			position: relative;
+			z-index: 1;
+
+			// Mobile (2)
+
+			@media screen and (min-width: $breakpoint-sm) { font-size: rem-calc(18); }
+		}
+	}
+
+	// Content
+
+	&-content {
+		// Wrapper
+
+		// &-wrapper {}
+
+		// Inner
+
+		&-inner { text-align: center; }
+
+		// Title
+
+		&-title { margin-bottom: rem-calc(30); }
+
+		// Text
+
+		&-text {
+			line-height: 1.6;
+			margin-bottom: rem-calc(30);
+		}
+
+		// Button
+
+		&-btn {
+			cursor: default;
+			display: inline-block;
+
+			// Icon
+
+			.fas { transform: rotateY(180deg); }
+		}
+	}
+}

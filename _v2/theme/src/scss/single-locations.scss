@@ -1,0 +1,76 @@
+// Global
+@import 'main';
+
+// Components
+@import 'components/component-note-box';
+@import 'components/single-locations/component-masthead-v2';
+@import 'components/single-locations/component-highlights';
+@import 'components/component-gallery';
+@import 'components/component-pillars';
+@import 'components/component-graphic';
+@import 'components/component-bios';
+@import 'components/component-faq';
+@import 'components/component-location';
+@import 'components/component-process';
+@import 'components/component-process-v2';
+@import 'components/component-call';
+
+// Note box
+.jp-note-box {
+	@include jp-note-box;
+}
+
+// Masthead V2
+.jp-masthead-v2 {
+	@include jp-masthead-v2;
+}
+
+// Highlights
+.jp-highlights {
+	@include jp-highlights;
+}
+
+// Gallery
+.jp-gallery {
+	@include jp-gallery;
+}
+
+// Pillars
+.jp-pillars {
+	@include jp-pillars;
+
+	// Graphic
+	&-graphic {
+		@include jp-graphic;
+	}
+}
+
+// Bios
+.jp-bios {
+	@include jp-bios;
+}
+
+// FAQ
+.jp-faq {
+	@include jp-faq;
+}
+
+// Location
+.jp-location {
+	@include jp-location;
+}
+
+// Process
+.jp-process {
+	@include jp-process;
+}
+
+// Process V2
+.jp-process-v2 {
+	@include jp-process-v2;
+}
+
+// Call
+.jp-call {
+	@include jp-call;
+}

@@ -1,0 +1,291 @@
+// Header
+
+.jp-header {
+	background-color: rgba($white ,0.5);
+	padding: rem-calc(10 0);
+	position: relative;
+	z-index: 4;
+
+	// Locations CPT single template
+
+	body.locations-template-template-single-location-v2 & { background-color: rgba($white ,0.9); }
+
+	// Modal open
+
+	body.modal-open & { @include blur-content; }
+
+	// Logo
+
+	&-logo {
+		height: rem-calc(60);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem-calc(200);
+
+		// Image
+
+		img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+	}
+
+	// Menu
+
+	&-nav {
+		background-color: $alabaster;
+		position: relative;
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-lg) { background-color: transparent; }
+
+		// Wrapper
+
+		&-wrapper {
+			// Mobile
+
+			@media screen and (max-width: $breakpoint-lg-max) {
+				margin-left: rem-calc(-4);
+				margin-right: rem-calc(-4);
+				max-width: none;
+				padding: 0;
+				width: calc(100% + #{rem-calc(8)});
+
+				// Nav Open
+
+				body.jp-header-nav-on & {
+					display: block !important;
+					margin-top: rem-calc(10);
+					z-index: 99999;
+				}
+			}
+		}
+
+		// List
+
+		&-list {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			// List > List
+
+			.jp-header-nav-item > & {
+				background: $white;
+				display: block;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-lg) {
+					background: $white;
+					border-top: rem-calc(6) solid $big-stone;
+					border-radius: rem-calc(0 0 3 3);
+					box-shadow: rem-calc(0 2 4) rgba($black, 0.18);
+					left: 0;
+					opacity: 0;
+					padding: rem-calc(10 0);
+					pointer-events: none;
+					position: absolute;
+					top: rem-calc(60);
+					transform: translateY(#{rem-calc(10)});
+					transform-origin: top;
+					transition: all 0.4s;
+					width: rem-calc(320);
+					z-index: 99999;
+
+					// Before
+
+					&:before {
+						background: none transparent;
+						content: '';
+						display: block;
+						height: rem-calc(27);
+						left: 0;
+						position: absolute;
+						top: rem-calc(-28);
+						width: 100%;
+					}
+				}
+			}
+
+			// List > List (hover)
+
+			.jp-header-nav-item:hover & {
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-lg) {
+					opacity: 1;
+					pointer-events: all;
+					transform: translateY(0);
+				}
+			}
+		}
+
+		// Item
+
+		&-item {
+			border-bottom: rem-calc(1) solid $white;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				border-bottom: 0;
+				padding: rem-calc(0 6);
+			}
+
+			@media screen and (min-width: $breakpoint-xl) { padding: rem-calc(0 12); }
+
+			// Item > Item
+
+			.jp-header-nav-item & {
+				@media screen and (min-width: $breakpoint-lg) { padding: 0; }
+			}
+		}
+
+		// Link
+
+		&-link {
+			color: $midnight;
+			display: block;
+			font-size: rem-calc(15);
+			font-weight: 700;
+			padding: rem-calc(20 15);
+			position: relative;
+			transition: all 0.4s;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				font-weight: 500;
+				padding: rem-calc(10);
+			}
+
+			// Hover
+
+			&:hover { color: $midnight; }
+
+			// Link > Link
+
+			.jp-header-nav-item .jp-header-nav-item > & {
+				font-weight: 500;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-lg) { padding: rem-calc(12 20 12 27); }
+
+				// Hover
+
+				&:hover { background-color: $athens-gray; }
+			}
+
+			// Icon
+
+			&[href$="/locations/"]:after,
+			&[href$="/reviews/"]:after,
+			&[href$="/about-us/"]:after {
+				@include fa-icon;
+				font-size: rem-calc(23);
+				font-weight: 700;
+				position: absolute;
+				right: rem-calc(15);
+				top: 50%;
+				transform: translateY(-50%);
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-lg) { display: none; }
+
+				// Link > Link
+
+				.jp-header-nav-item .jp-header-nav-item > & { display: none; }
+			}
+
+			&[href$="/locations/"]:after { content: '\f3c5'; }
+			&[href$="/reviews/"]:after { content: '\f499'; }
+			&[href$="/about-us/"]:after { content: '\f007'; }
+		}
+	}
+
+	// Mobile Trigger
+
+	&-mobile-trigger {
+		border-bottom: rem-calc(4) $big-stone solid;
+		border-top: rem-calc(4) $big-stone solid;
+		cursor: pointer;
+		display: inline-block;
+		height: rem-calc(26);
+		margin: rem-calc(0 0 0 5);
+		width: rem-calc(30);
+
+		// Wrapper
+
+		&-wrapper {
+			line-height: 0;
+			text-align: right;
+		}
+
+		// Nav Open
+
+		body.jp-header-nav-on & {
+			border: none;
+			color: $big-stone;
+			height: rem-calc(26);
+			margin: 0;
+			position: relative;
+			text-align: right;
+			width: auto;
+		}
+
+		&:before {
+			@include fa-icon;
+			display: none;
+			font-weight: 300;
+
+			// Nav Open
+
+			body.jp-header-nav-on & {
+				content: '\f00d';
+				display: block;
+				font-size: rem-calc(41);
+				line-height: rem-calc(26);
+			}
+		}
+
+		&:after {
+			background: $big-stone;
+			content: '';
+			display: block;
+			height: rem-calc(4);
+			margin-top: rem-calc(7);
+			width: 100%;
+
+			// Nav Open
+
+			body.jp-header-nav-on & { display: none; }
+		}
+	}
+
+	// Button
+
+	&-btn {
+		// Mobile
+
+		@media screen and (max-width: $breakpoint-lg-max) {
+			border-radius: 0;
+			justify-content: center;
+			padding-bottom: rem-calc(25);
+			padding-top: rem-calc(25);
+			width: 100%;
+		}
+	}
+}

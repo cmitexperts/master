@@ -1,0 +1,253 @@
+// Call
+
+@mixin jp-call {
+	background-color: $alabaster;
+	overflow: hidden;
+	padding-bottom: 0;
+
+	// Header
+
+	&-header {
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-lg) { padding-right: 15%; }
+	}
+
+	// Image
+
+	&-image {
+		border-radius: rem-calc(10);
+		display: block;
+		position: relative;
+		overflow: hidden;
+
+		// Wrapper
+
+		&-wrapper {
+			padding-bottom: rem-calc(15);
+			padding-left: rem-calc(15);
+			position: relative;
+			z-index: 1;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-sm) {
+				padding-bottom: rem-calc(30);
+				padding-left: rem-calc(50);
+			}
+
+			// Background Pattern
+
+			&:after {
+				background: linear-gradient(224.72deg, $emperor -1%, $international-klein-blue 100.5%);
+				border-radius: rem-calc(20 0 0 20);
+				bottom: 0;
+				content: '';
+				left: 0;
+				position: absolute;
+				right: rem-calc(-1000);
+				top: rem-calc(30);
+			}
+		}
+
+		// Image (HTML element)
+
+		&-image {
+			position: relative;
+			width: 100%;
+			z-index: 1;
+		}
+
+		// Icon
+
+		&-icon {
+			left: calc(50% + #{rem-calc(3)});
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			// Wrapper
+
+			&-wrapper {
+				background: rgba($white, 0.2);
+				border-radius: 50%;
+				color: $white;
+				font-size: rem-calc(30);
+				height: rem-calc(80);
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				width: rem-calc(80);
+				z-index: 2;
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-lg) {
+					font-size: rem-calc(35);
+					height: rem-calc(130);
+					width: rem-calc(130);
+				}
+			}
+		}
+
+		// Button
+
+		&-button {
+			bottom: rem-calc(15);
+			position: absolute;
+			right: rem-calc(15);
+			z-index: 2;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				bottom: rem-calc(30);
+				right: rem-calc(30);
+			}
+		}
+	}
+
+	// Wave
+
+	&-wave {
+		fill: $white;
+		height: 100%;
+		stroke: none;
+		width: 100%;
+
+		// Wrapper
+
+		&-wrapper {
+			height: rem-calc(150);
+			margin-top: rem-calc(-100);
+			overflow: hidden;
+			position: relative;
+		}
+	}
+
+	// Bottom
+
+	&-bottom {
+		// Review
+
+		&-review {
+			background: $zircon;
+			border: rem-calc(1) solid $athens-gray;
+			border-radius: rem-calc(20);
+			box-shadow: rem-calc(0 14 32) rgba($black, 0.07);
+			padding: rem-calc(25);
+			position: relative;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				margin-top: rem-calc(-100);
+				padding: rem-calc(50);
+				position: relative;
+				z-index: 1;
+			}
+
+			// Image
+
+			&-image {
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				border-radius: 50%;
+				box-shadow: rem-calc(0 2 2) rgba($black, 0.25);
+				display: block;
+				height: rem-calc(80);
+				overflow: hidden;
+				width: rem-calc(80);
+
+				// Wrapper
+
+				&-wrapper {
+					display: inline-block;
+					margin-bottom: rem-calc(15);
+					position: relative;
+
+					// Desktop
+
+					@media screen and (min-width: $breakpoint-md) {
+						margin-bottom: 0;
+						margin-right: rem-calc(10);
+					}
+				}
+
+				// Radar icon
+
+				&-radar {
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: cover;
+					height: rem-calc(26);
+					position: absolute;
+					right: rem-calc(-15);
+					top: rem-calc(-15);
+					width: rem-calc(26);
+				}
+			}
+
+			// Text
+
+			&-text {
+				// Strong
+
+				strong { color: $international-klein-blue; }
+			}
+
+			// Date
+
+			&-date {
+				color: $silver;
+				font-weight: 500;
+				font-size: rem-calc(19);
+				line-height: rem-calc(23);
+				margin-bottom: 0;
+			}
+
+			// Likes icon
+
+			&-likes {
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+				// cursor: pointer;
+				height: rem-calc(60);
+				position: absolute;
+				right: 0;
+				bottom: rem-calc(-30);
+				width: rem-calc(105);
+
+				// Data (number)
+
+				data {
+					color: $gray;
+					display: block;
+					font-size: rem-calc(22);
+					line-height: rem-calc(57);
+					padding: rem-calc(0 0 0 30);
+					text-align: center;
+				}
+			}
+		}
+
+		// Arrow
+
+		&-arrow {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			display: block;
+			height: rem-calc(297);
+			margin: rem-calc(60) 0 0 auto;
+			width: rem-calc(199);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) { margin: rem-calc(150) 0 0 rem-calc(30); }
+		}
+	}
+}

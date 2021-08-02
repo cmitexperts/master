@@ -1,0 +1,109 @@
+// Pillars
+
+@mixin jp-pillars {
+	background-color: $alabaster;
+	
+	&-graphic{
+			h3 {
+	color: $mirage;
+    margin-bottom: 40px;
+	}
+	}
+
+	// List
+
+	&-list { margin-bottom: rem-calc(-40); }
+
+	// Item
+
+	&-item {
+		margin-bottom: rem-calc(40);
+
+		// Header
+
+		&-header {
+			color: $international-klein-blue;
+			margin-bottom: rem-calc(30);
+			position: relative;
+
+			// Styles
+
+			&.style-a {
+				// color: $indochine;
+				padding-left: rem-calc(47 + 10);
+			}
+
+			&.style-b {
+				// color: $international-klein-blue;
+				padding-left: rem-calc(53 + 10);
+			}
+
+			&.style-c {
+				// color: $fun-green;
+				padding-left: rem-calc(48 + 10);
+			}
+
+			&.style-d {
+				// color: $purple;
+				padding-left: rem-calc(49 + 10);
+			}
+		}
+
+		// Icon
+
+		&-icon {
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			left: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+
+			// Styles (images moved to HTML to lazy load them... performance)
+
+			.style-a & {
+				// background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/pillars/icon-brain-2.svg');
+				height: rem-calc(54);
+				width: rem-calc(47);
+			}
+
+			.style-b & {
+				// background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/pillars/icon-blocks.svg');
+				height: rem-calc(53);
+				width: rem-calc(53);
+			}
+
+			.style-c & {
+				// background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/pillars/icon-meditation-2.svg');
+				height: rem-calc(65);
+				width: rem-calc(48);
+			}
+
+			.style-d & {
+				// background-image: url('/wp-content/themes/journeyPure/_v2/theme/assets/img/pillars/icon-prevent-2.svg');
+				height: rem-calc(57);
+				width: rem-calc(49);
+			}
+		}
+
+		// Subtitle
+
+		&-subtitle { margin-bottom: 0; }
+
+		// Title
+
+		&-title {
+			color: inherit;
+			margin-bottom: 0;
+		}
+
+		// Body
+
+		&-body {
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { padding-right: rem-calc(30); }
+		}
+	}
+}

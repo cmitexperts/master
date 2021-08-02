@@ -1,0 +1,171 @@
+// Reviews
+
+@mixin jp-reviews {
+	overflow: hidden;
+
+	// Component Header
+
+	.jp-component-header {
+
+		// Component Header Desktop
+
+		@media only screen and (min-width: $breakpoint-lg) {
+			margin-bottom: rem-calc(60);
+		}
+	}
+
+	// List
+
+	&-list {
+		// Row Desktop
+		.row {
+			@media only screen and (min-width: $breakpoint-lg) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 20px;
+			}
+		}
+
+		// Column Desktop
+		.col {
+			@media only screen and (min-width: $breakpoint-lg) {
+				width: 100%;
+			}
+		}
+	}
+
+	// Item
+
+	&-item {
+		background-color: $zircon;
+		border: rem-calc(1) solid $mercury;
+		box-shadow: rem-calc(0 24 32) rgba($black, 0.11);
+		border-radius: rem-calc(20);
+		height: calc(100% - #{rem-calc(30)});
+		margin-bottom: rem-calc(30);
+		padding: rem-calc(25);
+		position: relative;
+		z-index: 1;
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			padding: rem-calc(24 40 40 40);
+		}
+
+		// Author
+
+		&-author {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			grid-row-gap: rem-calc(10);
+			margin-bottom: rem-calc(24);
+			line-height: 1;
+
+			// Image
+
+			&-image {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				border-radius: 50%;
+				overflow: hidden;
+				min-width: rem-calc(68);
+				width: rem-calc(68);
+				height: rem-calc(68);
+			}
+
+			// Info
+
+			&-info {
+				display: flex;
+				flex-direction: column;
+				grid-row-gap: rem-calc(10);
+				align-items: center;
+			}
+
+			// Review
+			&-review {
+				display: flex;
+				flex-direction: column;
+				grid-row-gap: 10px;
+				align-items: center;
+			}
+
+			// Title
+
+			&-title {
+				font-weight: bold;
+				font-size: rem-calc(23);
+				margin-bottom: 0;
+			}
+
+			// Logo
+
+			&-logo {
+				padding-right: 0;
+			}
+
+			// Source Image
+
+			&-source_image {
+				width: rem-calc(24);
+				z-index: 1;
+			}
+
+			// Stars
+
+			&-stars {
+				margin-bottom: 0;
+				margin-top: rem-calc(2);
+			}
+
+			// Star
+
+			&-star {
+				color: $sunglow;
+				font-size: rem-calc(15);
+			}
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				flex-direction: row;
+				justify-content: space-between;
+
+				// Info
+
+				&-info {
+					flex-direction: row;
+				}
+
+				// Review
+
+				&-review {
+					flex-direction: row;
+				}
+
+				// Image
+
+				&-image {
+					margin-right: rem-calc(15);
+				}
+
+				// Logo
+
+				&-logo {
+					margin-left: rem-calc(10);
+				}
+			}
+		}
+
+		// Text
+
+		&-text {
+			margin-bottom: 0;
+			font-size: rem-calc(19);
+			line-height: 1.8;
+		}
+	}
+}

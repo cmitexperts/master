@@ -1,0 +1,134 @@
+// Facts
+
+@mixin jp-facts {
+	padding-bottom: 0;
+
+	// Title
+
+	&-title { text-align: left; }
+
+	// Items
+
+	&-items { counter-reset: items; }
+
+	// Item
+
+	&-item {
+		padding: rem-calc(0 0 50 90);
+		position: relative;
+
+		// Bullet
+
+		&:before {
+			background-color: rgba($international-klein-blue, 0.1);
+			border-radius: 50%;
+			color: $international-klein-blue;
+			counter-increment: items;
+			content: counter(items);
+			display: block;
+			font-size: rem-calc(34);
+			font-weight: 500;
+			height: rem-calc(65);
+			left: 0;
+			line-height: rem-calc(65);
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: rem-calc(65);
+		}
+
+		// Title
+
+		&-title { color: #1B2831; margin-bottom:25px;line-height: 1.2; }
+	}
+
+	// Image
+
+	&-image {
+		// height: 100%;
+		max-width: none;
+		min-height: rem-calc(1);
+		overflow: hidden;
+		width: calc(100% + 15px);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-lg) {
+			width: fit-content;
+			width: intrinsic;
+			width: -moz-max-content;
+			width: -webkit-max-content;
+			width: max-content;
+		}
+
+		// Wrapper
+
+		&-wrapper {
+			margin: rem-calc(40 0 0);
+			padding-left: 0;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-lg) {
+				margin: 0;
+				padding-left: rem-calc(75);
+			}
+
+			@media screen and (min-width: $breakpoint-xl) { margin: rem-calc(-40 0 0); }
+		}
+	}
+
+	// Logos
+
+	&-logos {
+
+		// Title
+
+		&-title {
+			align-items: center;
+			display: flex;
+
+			span {
+				flex: 0 0 auto;
+				margin: rem-calc(0 15 0 0);
+				width: auto;
+			}
+
+			&:after {
+				border-bottom: dotted rem-calc(1) $black;
+				content: '';
+				flex: 1 1 0;
+				width: auto;
+			}
+		}
+
+		// Items
+
+		&-items {
+			display: flex;
+			flex-wrap: wrap;
+			margin: rem-calc(-3);
+		}
+
+		// Item
+
+		&-item {
+			background-color: $seashell;
+			flex: 0 0 auto;
+			margin: rem-calc(3);
+			width: calc(50% - #{rem-calc(6)});
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { width: calc(20% - #{rem-calc(6)}); }
+
+			// Image
+
+			&-image {
+				filter: grayscale(100%);
+				margin: rem-calc(7) auto;
+				max-width: rem-calc(60);
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+// Interview
+
+@mixin jp-interview {
+	background: #1827431a; 
+	border-radius: rem-calc(5);
+	display: block;
+	margin: 0 auto rem-calc(20);
+	max-width: 100%;
+	padding: rem-calc(20 15);
+	width: rem-calc(417);
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-sm) {
+		border-radius: rem-calc(80);
+		padding: rem-calc(8);
+	}
+
+	@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(40); }
+
+	// Image
+
+	&-image {
+		width: 100%;
+		opacity:.9;
+
+		// Wrapper
+
+		&-wrapper {
+			border-radius: 50%;
+			height: rem-calc(65);
+			margin: 0 auto rem-calc(15);
+			overflow: hidden;
+			width: rem-calc(65);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-sm) { margin-bottom: 0; }
+
+			
+		}
+	}
+
+	// Content
+
+	&-content {
+		margin-bottom: rem-calc(15);
+		text-align: center;
+		color:#1a28458f;
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-sm) {
+			margin-bottom: 0;
+			text-align: left;
+		}
+	}
+
+	// Heading
+
+	&-heading {
+		margin-bottom: 0;
+	}
+
+	// Subheading
+
+	&-subheading { margin-bottom: 0;
+	}
+
+	// Play
+
+	&-play {
+		border: rem-calc(2) solid rgba($international-klein-blue, 0.3);
+		border-radius: 50%;
+		height: rem-calc(60);
+		margin: 0 auto;
+		text-align: center;
+		width: rem-calc(60);
+
+
+
+		// Icon
+
+		&-icon {
+			font-size: rem-calc(25);
+			line-height: rem-calc(56);
+			margin-left: rem-calc(4);
+			color:rgba($international-klein-blue, 0.3);
+		}
+	}
+}

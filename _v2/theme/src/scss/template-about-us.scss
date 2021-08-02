@@ -1,0 +1,17 @@
+// Global
+@import 'main';
+
+// Components
+@import 'components/component-masthead';
+@import 'components/component-ratings';
+// @TODO other sections
+
+// Masthead
+.jp-masthead {
+	@include jp-masthead;
+
+	// Ratings
+	&-ratings {
+		@include jp-ratings;
+	}
+}

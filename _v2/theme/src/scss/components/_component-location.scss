@@ -1,0 +1,149 @@
+// Location
+
+@mixin jp-location {
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) {
+		&:after {
+			background-color: $alabaster;
+			bottom: 0;
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 50%;
+		}
+
+		& > .container {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+	// V2
+
+	&-v2 {
+		&:before {
+			bottom: 0;
+			border-bottom: rem-calc(10) dotted $white;
+			content: '';
+			left: 0;
+			position: absolute;
+			right: 0;
+			width: 100%;
+			z-index: 2;
+		}
+	}
+
+	// Header
+
+	&-header { margin: 0 0 rem-calc(40); }
+
+	// Locations
+
+	&-locations {
+		margin-top: rem-calc(40);
+
+		// Title
+
+		&-title {
+			display: block;
+			font-style: italic;
+		}
+
+		// Item
+
+		&-item {
+			display: block;
+			margin-top: rem-calc(5);
+		}
+	}
+
+	// Address
+
+	&-address {
+		padding-top: rem-calc(100);
+		position: relative;
+
+		// Border top
+
+		&:before {
+			background-color: rgba($lemon-grass, 0.3);
+			content: '';
+			display: inline-block;
+			height: rem-calc(1);
+			left: 0;
+			max-width: rem-calc(150);
+			position: absolute;
+			top: rem-calc(50);
+			width: 100%;
+		}
+	}
+
+	// Get Directions link
+
+	&-direction {
+		display: block;
+		font-weight: 700;
+		margin-top: rem-calc(5);
+		margin-bottom: rem-calc(40);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: 0; }
+	}
+
+	// Tags
+
+	&-tags {
+		margin-bottom: rem-calc(40);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(80); }
+
+		// TItle
+
+		&-title { margin-bottom: rem-calc(30); }
+
+		// List
+
+		&-list { margin-bottom: rem-calc(-20); }
+
+		// Item
+
+		&-item {
+			background: $athens-gray-2;
+			border: rem-calc(1) solid $mercury;
+			border-radius: rem-calc(47 / 2);
+			display: inline-block;
+			margin-bottom: rem-calc(20);
+			padding: rem-calc(10 15);
+		}
+	}
+
+	// Map
+
+	&-map {
+		// Image
+
+		&-image {
+			max-width: rem-calc(1700);
+			width: 250%;
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) { width: 100%; }
+
+			// Wrapper
+
+			&-wrapper {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				overflow: hidden;
+			}
+		}
+	}
+}

@@ -1,0 +1,247 @@
+// Masthead
+
+@mixin jp-masthead {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-bottom: 0;
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) {
+		padding-bottom: 0;
+		padding-top: calc(#{rem-calc(50)} + #{rem-calc(90)});
+	}
+
+	@media screen and (min-width: $breakpoint-xl) {
+		margin-top: 80px;
+		padding-top: 100px;
+	}
+
+	// Background overlay
+
+	&:after {
+		background-image: linear-gradient(
+						180deg,
+						rgba($white, 0) 0%,
+						rgba($white, 1) 45%
+		);
+		content: '';
+		position: absolute;
+		height: 100%;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	// Container
+
+	& > .container {
+		position: relative;
+		z-index: 3;
+	}
+
+	// Header
+
+	&-header {
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: rem-calc(50);
+			max-width: 750px;
+		}
+	}
+
+	// H1
+
+	&-h1 {
+		color: #ced6e5;
+	}
+
+	// Title
+
+	&-title {
+		color: $international-klein-blue;
+	}
+
+	// Slider
+
+	&-box-slider {
+		display: flex;
+		width: 2000000000px;
+		list-style: none;
+
+		// Wrapper
+
+		&-wrapper {
+			position: relative;
+			z-index: 3;
+			overflow: hidden;
+			margin-top: -34px;
+			margin-bottom: -40px;
+
+			// Marquee
+
+			.js-marquee {
+				padding-top: 40px;
+				padding-bottom: 40px;
+			}
+
+			// Marquee Desktop
+
+			@media screen and (min-width: $breakpoint-md) {
+				margin-bottom: -50px;
+			}
+
+		}
+
+		// Slider Item
+
+		&-item {
+			display: inline-block;
+			margin-right: 32px;
+			border-radius: 10px;
+			width: 240px;
+			min-height: 300px;
+			background-color: rgba(255, 255, 255, 0.80);
+			box-shadow: 6px 6px 34px rgba(0, 0, 0, 0.25);
+
+			// Slider Item Last
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			// Style One
+
+			&-style-one {
+				background-size: cover;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-color: lightgrey;
+			}
+
+			// Style Two
+			&-style-two {
+				.jp-masthead-box-slider-item {
+
+					//Style Two Content
+
+					&-content {
+						grid-template-rows: 230px auto;
+					}
+
+					// Style Two Image
+
+					&-image {
+						background-size: cover;
+						background-position: center center;
+						background-repeat: no-repeat;
+						background-color: lightgrey;
+						border-radius: 10px 10px 0 0;
+						height: 230px;
+					}
+
+					// Style Two Text
+
+					&-text {
+						padding: 20px;
+					}
+
+					// Slide Two Title
+
+					&-title {
+						margin: 0;
+						color: $international-klein-blue;
+						font-size: 18px;
+						font-weight: 700;
+						line-height: 120%;
+					}
+
+					// Slide Two Subtitle
+
+					&-subtitle {
+						margin: 0;
+						font-size: 18px;
+						font-weight: 400;
+						line-height: 120%;
+					}
+				}
+			}
+
+			// Style Three
+			&-style-three {
+				display: grid;
+				align-items: center;
+				border: 1px solid rgba(197, 197, 197, 0.7);;
+				padding: 20px;
+
+				.jp-masthead-box-slider-item {
+
+					// Style Three Icon
+
+					&-icon {
+						margin-bottom: 20px;
+
+						img {
+							margin: 0 auto;
+							max-width: 70%;
+						}
+					}
+
+					// Style Three Icon Description
+
+					&-text {
+						margin: 0;
+						font-size: 18px;
+						font-weight: 700;
+						line-height: 130%;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+
+	// Ratings
+	&-ratings {
+		margin-top: 32px !important;
+		color: #565f66;
+		text-align: center;
+
+		// Ratings Title
+
+		&-title {
+			margin-bottom: 0;
+			font-size: 24px;
+			font-weight: 800;
+		}
+
+		// Ratings Subtitle
+
+		&-subtitle {
+			font-size: 24px;
+			font-weight: 400;
+
+			@media screen and (min-width: $breakpoint-md) {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		// Ratings Stars
+
+		&-rating-stars {
+			margin: 0 20px 1px !important;
+
+			// Ratings Star
+
+			&-star {
+				font-size: 23px !important;
+			}
+		}
+	}
+}
+
+

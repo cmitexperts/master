@@ -1,0 +1,24 @@
+// Content
+
+@mixin jp-content {
+	// Not found Page Template
+
+	body.error404 & {
+		text-align: center;
+	}
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) {
+		padding-bottom: 0;
+		padding-top: rem-calc(90);
+	}
+
+	// Headings
+
+	h1 {
+		@extend .h2;
+		color: $international-klein-blue;
+		line-height: 1.2;
+	}
+}

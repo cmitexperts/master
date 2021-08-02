@@ -1,0 +1,85 @@
+// Ratings
+
+@mixin jp-ratings {
+	margin: 0 auto;
+	max-width: rem-calc(650);
+
+	// Rating
+
+	&-rating {
+		background: $white;
+		border-radius: rem-calc(5);
+		box-shadow: rem-calc(0 3 3) rgba($black, 0.25);
+		height: calc(100% - #{rem-calc(20)});
+		margin-bottom: rem-calc(20);
+		padding: rem-calc(20 15);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			height: 100%;
+			margin-bottom: 0;
+		}
+
+		// Image
+
+		&-image { width: rem-calc(42); }
+
+		// Content
+
+		&-content {
+			line-height: 1.2;
+			padding-left: rem-calc(10);
+		}
+
+		// Title
+
+		&-title {
+			font-weight: bold;
+			margin-bottom: 0;
+		}
+
+		// Subtitle
+
+		&-subtitle {
+			color:  $sunglow;
+			font-weight: bold;
+			opacity: 0.6;
+			margin-bottom: 0;
+			margin-top: rem-calc(2);
+		}
+
+		// Stars
+
+		&-stars {
+			margin-bottom: 0;
+			margin-top: rem-calc(2);
+
+			// Star
+
+			&-star {
+				color: $sunglow;
+				font-size: rem-calc(15);
+			}
+
+			// Average
+
+			&-average {
+				color:  $sunglow;
+				font-size: rem-calc(15);
+				font-weight: bold;
+				opacity: 0.6;
+			}
+		}
+
+		// Text
+
+		&-text {
+			color: $black;
+			font-size: rem-calc(15);
+			margin-bottom: 0;
+			margin-top: rem-calc(2);
+			opacity: 0.6;
+		}
+	}
+}

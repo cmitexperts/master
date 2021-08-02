@@ -1,0 +1,116 @@
+// Component (global)
+
+.jp-component {
+	background-color: $white;
+	padding-bottom: rem-calc(40);
+	padding-top: rem-calc(40);
+	position: relative;
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) {
+		padding-bottom: rem-calc(120);
+		padding-top: rem-calc(120);
+	}
+
+	// No padding
+
+	&.jp-component-no-padding {
+		padding-bottom: 0;
+		padding-top: 0;
+	}
+
+	&.jp-component-no-padding-top {
+		padding-top: 0;
+	}
+	&.jp-component-no-padding-bottom {
+		padding-bottom: 0;
+	}
+
+	// Header
+
+	&-header {
+		margin: 0 auto rem-calc(40);
+		max-width: rem-calc(705);
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin: 0 auto rem-calc(90);
+		}
+
+		// Left aligned
+
+		&-left {
+			margin: 0 0 rem-calc(40);
+
+			// Desktop
+
+			@media screen and (min-width: $breakpoint-md) {
+				margin: 0 0 rem-calc(90);
+			}
+		}
+	}
+
+	// <h1>
+
+	&-h1 {
+		color: $international-klein-blue;
+		margin-bottom: rem-calc(10);
+		text-align: center;
+
+		// Last child
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		// Left aligned
+
+		.jp-component-header-left & {
+			text-align: left;
+		}
+	}
+
+	// Title
+
+	&-title {
+		margin-bottom: rem-calc(20);
+		text-align: center;
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-bottom: rem-calc(40);
+		}
+
+		// Last child
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		// Left aligned
+
+		.jp-component-header-left & {
+			text-align: left;
+		}
+	}
+
+	// Subtitle
+
+	&-subtitle {
+		text-align: center;
+
+		&,
+		p {
+			margin-bottom: 0;
+		}
+
+		// Left aligned
+
+		.jp-component-header-left & {
+			text-align: left;
+		}
+	}
+}

@@ -1,0 +1,31 @@
+// Main
+
+.jp-main {
+	overflow: hidden;
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) {
+		margin-top: rem-calc(-80);
+	}
+
+	// Default page template
+	// Not found page template
+
+	body.page-template-default &,
+	body.error404 & {
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-top: 0;
+		}
+	}
+
+	// Modal open
+	// Nav open
+
+	body.modal-open &,
+	body.jp-header-nav-on & {
+		@include blur-content;
+	}
+}

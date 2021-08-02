@@ -1,0 +1,19 @@
+// Mixins
+
+// FontAwesome Icon
+@mixin fa-icon() {
+    display: inline-block;
+    font: normal normal normal 14px/1 'Font Awesome\ 5 Pro';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Blur content
+@mixin blur-content() {
+	filter: blur(#{rem-calc(8)});
+	-webkit-filter: blur(#{rem-calc(8)});
+	opacity: 0.5;
+	pointer-events: none;
+}

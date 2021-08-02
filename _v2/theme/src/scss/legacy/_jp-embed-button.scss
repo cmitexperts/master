@@ -1,0 +1,58 @@
+@mixin jp-embed-responsive {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	cursor: pointer;
+
+	// Icon
+
+	.play-button:after {
+		background: transparent
+			url('/wp-content/themes/journeyPure/assets/img/play-circle-solid.svg')
+			no-repeat center center;
+		background-size: 100px 100px;
+		content: '';
+		left: 50%;
+		height: 100px;
+		opacity: 0.7;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 150ms ease-out;
+		width: 100px;
+		z-index: 2;
+	}
+
+	&:hover,
+	&:focus {
+		.play-button:after {
+			opacity: 0.9;
+			// transform: translate(-50%, -50%) scale(1.05);
+		}
+	}
+
+	// Background
+
+	.play-button:before {
+		background-color: #fff;
+		border-radius: 50%;
+		content: '';
+		height: 106px;
+		left: 50%;
+		opacity: 0.7;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 150ms ease-out;
+		width: 106px;
+		z-index: 1;
+	}
+
+	&:hover,
+	&:focus {
+		.play-button:before {
+			opacity: 0.9;
+			transform: translate(-50%, -50%) scale(1.05);
+		}
+	}
+}

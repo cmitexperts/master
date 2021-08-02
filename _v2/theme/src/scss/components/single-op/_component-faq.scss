@@ -1,0 +1,131 @@
+// FAQ
+
+@mixin jp-faq {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+
+	// Background overlay
+
+	&:after {
+		background-image:	linear-gradient(180deg, $white 0%, rgba($white, 0) 100%),
+							linear-gradient(0deg, rgba($white, 0.8), rgba($white, 0.8));
+		content: '';
+		position: absolute;
+		height: 100%;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+
+	// Container
+
+	& > .container {
+		position: relative;
+		z-index: 2;
+	}
+
+	// Accordion
+
+	&-accordion {
+
+		.h6{
+		color:$international-klein-blue;
+	}
+
+		// Item
+
+		&-item {
+			// Header
+
+			&-header {
+				cursor: pointer;
+				margin-bottom: rem-calc(20);
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(40); }
+			}
+
+			// Question
+
+			&-question {
+				align-items: flex-end;
+				display: flex;
+				position: relative;
+
+				// Line
+
+				&:after {
+					background-color: $international-klein-blue;
+					bottom: rem-calc(65/2);
+					content: '';
+					height: rem-calc(1);
+					left: 0;
+					position: absolute;
+					right: 0;
+				}
+			}
+
+			// Counter
+
+			&-counter {
+				background-color: $white;
+				border: rem-calc(1) solid $international-klein-blue;
+				border-radius: 50%;
+				color: $international-klein-blue;
+				flex: 0 0 auto;
+				font-family: $font-family-heading;
+				font-size: rem-calc(34);
+				height: rem-calc(65);
+				line-height: rem-calc(60);
+				position: relative;
+				text-align: center;
+				width: rem-calc(65);
+				z-index: 1;
+
+				[aria-expanded="true"] & {
+					background-color: $international-klein-blue;
+					color: $white;
+
+				}
+			}
+
+			// Title
+
+			&-title {
+				margin-bottom: rem-calc((65/2)+10);
+				padding-left: rem-calc(20);
+
+				.jp-faq-accordion-item-header.collapsed & { color: $black; }
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) { padding-left: rem-calc(50); }
+			}
+
+			// Body
+
+			// &-body {}
+
+			// Answer
+
+			&-answer {
+				margin-bottom: rem-calc(50);
+				margin-left: rem-calc(65 + 20);
+				margin-right: rem-calc(15);
+				max-width: rem-calc(860);
+
+				// Desktop
+
+				@media screen and (min-width: $breakpoint-md) {
+					margin-bottom: rem-calc(90);
+					margin-left: rem-calc(65 + 50);
+					margin-right: rem-calc(50);
+				}
+			}
+		}
+	}
+}

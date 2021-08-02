@@ -1,0 +1,104 @@
+// Table Legacy
+
+@mixin jp-table-legacy {
+	background-color: $white;
+    position: relative;
+
+	// Desktop
+
+	@media screen and (min-width: $breakpoint-md) { padding-bottom: rem-calc(90); }
+
+    &:before {
+        background-color: $link-water;
+        content: '';
+        height: 65%;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .col-12 {
+        border-bottom: rem-calc(1) solid $seashell;
+
+        &:last-child { border-bottom: none; }
+
+        @media screen and (min-width: $breakpoint-lg) {
+            border-bottom: none;
+            border-right: rem-calc(1) solid $seashell;
+
+            &:last-child { border-right: none; }
+        }
+	}
+
+	// Header
+
+	&-header {
+
+		// Desktop
+
+		@media screen and (min-width: $breakpoint-md) { margin-bottom: rem-calc(60); }
+	}
+
+	// Cards
+
+    &-cards {
+        background-color: $white;
+        border-radius: rem-calc(10);
+        box-shadow: rem-calc(0 10 13 -6) rgba(0, 0, 0, 0.08), rem-calc(0 20 31 3) rgba(0, 0, 0, 0.09), rem-calc(0 8 20 7) rgba(0, 0, 0, 0.02);
+        padding: rem-calc(15 25);
+        margin: 0 auto;
+        max-width: rem-calc(1024);
+	}
+
+	// Card
+
+    &-card {
+		padding: rem-calc(25);
+
+		// Image
+
+        &-img {
+            display: block;
+            margin: 0 auto rem-calc(25);
+            max-width: rem-calc(125);
+		}
+
+		// Title
+
+        &-title {
+            margin-bottom: rem-calc(20);
+            text-align: center;
+
+		}
+
+		// List
+
+        &-list {
+            list-style: none;
+            margin-bottom: 0;
+			padding-left: 0;
+
+			// Item
+
+            &-item {
+                border-top: rem-calc(1) solid $seashell;
+                font-size: rem-calc(14);
+                font-weight: 600;
+                line-height: 1.5;
+                padding: rem-calc(15 0);
+                text-align: center;
+                text-transform: uppercase;
+            }
+		}
+
+		// Info
+
+        &-info { margin-left: rem-calc(5); }
+    }
+}

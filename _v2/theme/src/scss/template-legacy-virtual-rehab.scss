@@ -1,0 +1,528 @@
+// Global
+@import 'main';
+
+// LEGACY CODE
+// for the new design of this page,
+// please use the new pattern from template-homepage.scss and other templates
+
+@import 'legacy/default';
+@import 'legacy/faqs';
+@import 'legacy/ask-a-question';
+
+.jp-legacy-virtual-rehab {
+	overflow: hidden;
+
+	// Section
+
+	&-section {
+		@import 'legacy/jp-section';
+		@include jp-section;
+	}
+
+	// Masthead Section
+
+	&-masthead {
+		background-color: $light-blue;
+		position: relative;
+
+		@media screen and (min-width: $breakpoint-md) {
+			margin-top: rem-calc(80);
+		}
+
+		.background-circle {
+			background: #e7e7e7;
+			border-radius: 100% 100% 50px 50px;
+			height: 100%;
+			padding: 10px 0 30px;
+
+			@media screen and (max-width: 768px) {
+				margin-top: 60px;
+			}
+		}
+
+		&-img {
+			&-wrapper {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				opacity: 0.8;
+			}
+		}
+
+		&-title {
+			color: #000;
+			font-size: 70px; // 50px;
+			font-weight: 400;
+			letter-spacing: -1px;
+			margin-bottom: 35px;
+
+			@media screen and (min-width: 768px) {
+				// font-size: 70px;
+				margin-bottom: 35px;
+			}
+
+			strong {
+				font-weight: 800;
+			}
+
+			span {
+				color: $primary;
+				font-weight: 800;
+				font-size: 50px;
+			}
+		}
+
+		&-subtitle {
+			font-size: 26px; // 20px;
+			margin-bottom: 30px;
+
+			@media screen and (min-width: 768px) {
+				// font-size: 26px;
+				margin-bottom: 30px;
+				max-width: 645px;
+			}
+		}
+
+		&-button {
+			display: inline-block;
+			margin-bottom: 15px;
+			padding: 15px 20px;
+			text-transform: uppercase;
+		}
+
+		&-text {
+			color: $main-gray;
+			font-size: 20px;
+			padding-bottom: 0;
+			margin-top: 17px;
+			max-width: 360px;
+			text-align: center;
+			margin: 0 auto;
+		}
+
+		&-divider {
+			background-color: #ebebeb;
+			display: block;
+			height: 40px;
+			position: relative;
+
+			&-container {
+				height: 100px;
+				overflow: hidden;
+				margin-top: -20px;
+				width: 100%;
+			}
+
+			&:before {
+				background-color: #ffffff;
+				border-radius: 100%;
+				content: '';
+				display: block;
+				height: 300px;
+				position: absolute;
+				right: -25%;
+				top: 20px;
+				width: 100%;
+			}
+
+			&:after {
+				background-color: #ebebeb;
+				border-radius: 100%;
+				content: '';
+				display: block;
+				height: 300px;
+				left: -25%;
+				position: absolute;
+				top: -240px;
+				width: 100%;
+			}
+		}
+	}
+
+	// Highlights V2
+
+	&-highlights-v2 {
+		@import 'legacy/jp-highlights-v2';
+		@include jp-highlights-v2;
+	}
+
+	// Table Section
+
+	&-table {
+		@import 'legacy/jp-table';
+		@include jp-table;
+
+		&-subtitle {
+			max-width: 660px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		img {
+			max-width: 60px !important;
+			opacity: 0.8;
+		}
+	}
+
+	// Components Section
+
+	&-components {
+		background-color: #ffffff;
+		position: relative;
+
+		&-title {
+			@extend .h2;
+
+			font-style: unset;
+			margin-bottom: 15px;
+			text-align: center;
+		}
+
+		&-subtitle {
+			@extend .h3;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+
+		&-icon {
+			align-items: center;
+			color: #00389f;
+			display: flex;
+			font-size: 25px;
+			justify-content: center;
+			margin-bottom: 20px;
+
+			@media screen and (min-width: 768px) {
+				margin-bottom: 40px;
+			}
+
+			.fas {
+				border-left: 2px solid #00389f;
+				border-right: 2px solid #00389f;
+				padding: 10px 20px;
+			}
+
+			&:before,
+			&:after {
+				background-color: #00389f;
+				content: '';
+				display: block;
+				height: 1px;
+				max-width: 150px;
+				width: 150px;
+			}
+		}
+
+		// &-img {}
+
+		&-text {
+			margin-top: 30px;
+
+			@media screen and (min-width: 992px) {
+				margin-top: 0;
+			}
+
+			p,
+			ul,
+			ol {
+				color: #74757a;
+			}
+
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				list-style: none;
+				padding-left: 0;
+
+				li {
+					flex: 0 0 100%;
+					padding: 5px 0;
+					max-width: 100%;
+
+					@media screen and (min-width: 768px) {
+						flex: 0 0 50%;
+						max-width: 50%;
+					}
+
+					.fas {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+
+		&-counters {
+			display: flex;
+			margin-top: 30px;
+		}
+
+		&-counter {
+			border-right: 1px solid #ebebeb;
+			flex: 0 0 33.3333333333%;
+			max-width: 33.3333333333%;
+			padding: 0 20px 10px;
+			text-align: center;
+
+			&:last-child {
+				border-right: 0;
+			}
+
+			&-number,
+			&-text {
+				color: #74757a;
+				font-family: $heading-font;
+			}
+
+			&-number {
+				font-size: 30px;
+				padding-bottom: 5px;
+
+				@media screen and (min-width: 768px) {
+					font-size: 60px;
+				}
+			}
+
+			&-text {
+				padding-bottom: 0;
+			}
+			.h1 {
+				color: #74757a;
+				padding-bottom: 0;
+			}
+		}
+	}
+
+	// Cards Section
+
+	&-cards {
+		background-color: #ffffff;
+		position: relative;
+		padding-top: 10px;
+
+		.container {
+			max-width: 1024px;
+		}
+
+		&-grid {
+			> .row > .col-12 {
+				margin-bottom: 30px;
+			}
+		}
+
+		&-card {
+			align-items: center;
+			background-color: #ebebeb;
+			border-top: 8px solid $primary;
+			border-radius: 0 0 3px 3px;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			padding: 30px;
+
+			&-image {
+				align-items: center;
+				background-color: $primary;
+				border-radius: 50%;
+				color: #ebebeb;
+				display: flex;
+				font-size: 30px;
+				height: 60px;
+				justify-content: center;
+				margin-bottom: 20px;
+				width: 60px;
+				opacity: 0.4;
+			}
+
+			&-title {
+				font-size: 22px;
+				font-weight: bold;
+				margin-bottom: 15px;
+				text-align: center;
+			}
+
+			&-text {
+				text-align: center;
+
+				p {
+					color: #7d7f81;
+
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// Bios Section
+
+	.bio-section {
+		@import 'legacy/jp-bios';
+		@include jp-bios;
+
+		background: #ebebeb;
+
+		.card-body {
+			background: #ebebeb;
+		}
+	}
+
+	// Process Section
+
+	&-process {
+		background-color: $primary;
+		position: relative;
+
+		&-title {
+			color: #ffffff;
+			display: block;
+			font-weight: 400;
+			letter-spacing: -2px;
+			margin-bottom: 20px;
+
+			strong {
+				font-weight: 700;
+			}
+		}
+
+		// &-grid {
+		// 	> .row > .col-12 {
+		// 		margin-bottom: 30px;
+		// 	}
+		// }
+
+		&-card {
+			margin-bottom: 30px;
+
+			&-counter {
+				color: #ffffff;
+				font-size: 60px;
+				font-weight: 800;
+			}
+
+			&-title {
+				align-items: center;
+				color: #ffffff;
+				display: flex;
+				font-size: 14px;
+				text-transform: uppercase;
+
+				&:before {
+					background-color: #ffffff;
+					content: '';
+					height: 1px;
+					margin-right: 10px;
+					max-width: 120px;
+					width: 120px;
+				}
+			}
+
+			&-text {
+				p {
+					color: #ffffff;
+
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+
+		&-button {
+			display: inline-block;
+			padding: 15px 20px;
+			text-transform: uppercase;
+
+			span:first-child {
+				margin-right: 5px;
+			}
+		}
+
+		.cta-process {
+			p {
+				color: white;
+				margin-top: 15px;
+			}
+		}
+
+		&-divider {
+			background-color: $primary;
+			display: block;
+			height: 40px;
+			position: relative;
+
+			&-container {
+				height: 100px;
+				overflow: hidden;
+				margin-top: -20px;
+				width: 100%;
+			}
+
+			&:before {
+				background-color: #ffffff;
+				border-radius: 100%;
+				content: '';
+				display: block;
+				height: 300px;
+				position: absolute;
+				right: -25%;
+				top: 20px;
+				width: 100%;
+			}
+
+			&:after {
+				background-color: $primary;
+				border-radius: 100%;
+				content: '';
+				display: block;
+				height: 300px;
+				left: -25%;
+				position: absolute;
+				top: -240px;
+				width: 100%;
+			}
+		}
+	}
+
+	// FAQ Section
+
+	&-faq {
+		@import 'legacy/jp-faq';
+		@include jp-faq;
+	}
+
+	// What now? Section
+
+	.ask-a-question {
+		h2 {
+			margin-bottom: 10px !important;
+		}
+
+		.btn {
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+
+		p {
+			text-transform: none;
+			padding-bottom: 10px;
+		}
+	}
+
+	// Extra
+
+	.virtual-phone {
+		color: $main-gray;
+		margin-top: 5px;
+		font-size: 26px;
+
+		a {
+			color: $main-gray !important;
+		}
+	}
+
+	.calendly-popup {
+		max-height: 0;
+	}
+}
